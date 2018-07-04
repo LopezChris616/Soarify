@@ -1,0 +1,725 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins
+}
+
+#homeMain {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.31), rgba(0,0,0,0.31)), url("https://images.unsplash.com/photo-1446944987594-eb9bb99c6e22?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d8cc23e498ab0997e45abd6ac20ea70e&auto=format&fit=crop&w=1653&q=80");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    height: 900px;
+    color: white;
+    display: grid;
+    grid-template-rows: 130px repeat(2, 80px);
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+@keyframes homeWelcome {
+    from {
+        opacity: 0;
+        transform: skewY(8deg);
+    }
+    to {
+        opacity: 1;
+        transform: skewY(0deg);
+    }
+}
+
+@keyframes homeLinks {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#homeMainImg h1, h3 {
+    font-weight: 100;
+    animation: homeWelcome 1s;
+}
+
+#homeMain h1 {
+    animation: homeWelcome 0.5s;
+}
+
+.vacationLinks {
+    color: white;
+    text-decoration: none;
+    border-radius: 8%;
+    margin: 5px;
+    padding: 5px;
+    font-weight: 100;
+    background-color: rgba(0, 0, 0, 0.584);
+    font-size: 38px;
+    animation: homeLinks 1.5s;
+}
+
+#homeContent {
+    display: grid;
+    grid-template-rows: repeat(3, 400px);
+    padding: 25px;
+    justify-items: center;
+    grid-gap: 40px;
+}
+
+#homeContent h2 {
+    text-decoration: underline;
+}
+
+.homeTitleContent {
+    grid-column: 2 / -1;
+}
+
+.vacaPlanInfoLeft {
+    display: grid;
+    width: 60%;
+    grid-template-columns: 450px 1fr;
+    grid-template-rows: 80px repeat(2, 150px);
+    font-size: 20px;
+    border-bottom: 1px solid black;
+}
+
+.vacaPlanInfoRight {
+    display: grid;
+    width: 60%;
+    grid-template-columns: 1fr 450px;
+    grid-template-rows: 80px repeat(2, 150px);
+    font-size: 20px;
+    border-bottom: 1px solid black;
+}
+
+.vacaPlanInfoLeft p {
+    grid-column: 2 / -1;
+    margin-left: 20px;
+}
+
+.paraInfo1 {
+    grid-row: 2 / 3;
+}
+
+.paraInfo2 {
+    grid-row: 3 / -1;
+}
+
+
+.imgSize {
+    width: 450px;
+    grid-row: 2 / -1;
+    justify-self: end;
+}
+
+#getStartedLink {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6%;
+    padding: 5px;
+}
+
+#footer {
+    height: 100px;
+    background-color: rgb(76, 122, 157);
+}
+
+#navbar {
+    display: grid;
+    margin: 0px !important;
+    grid-template-columns: 1fr;
+    width: 270px;
+    grid-template-rows: repeat(4, 80px);
+    background-color: rgb(76, 122, 157);
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.navbarDisplay {
+    grid-row: 1 / -1;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.createVaca {
+    padding: 0px;
+    text-align: center;
+    height: 885px;
+    display: grid;
+    grid-template-columns: 270px repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.createVaca h1 {
+    grid-column: 2/ -1;
+    margin-top: 30px;
+}
+
+.createVaca h2 {
+    grid-column: 2/ -1;
+}
+
+#createForm {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(6, 50px);
+    grid-gap: 20px;
+    justify-content: center;
+    grid-column: 2 / -1;
+}
+
+#editForm {
+    display: grid;
+    grid-template-rows: repeat(6, 50px);
+    grid-gap: 20px;
+    justify-items: center;
+    
+}
+
+input {
+    font-size: 18px;
+}
+
+select {
+    font-size: 18px;
+}
+
+#submitForm {
+    width: 40%;
+    font-size: 20px;
+}
+
+span {
+    color: red;
+}
+
+@keyframes deleteMessage {
+    from {
+        opacity: 0;
+        transform: translate(-100%, -100%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.viewDeleteMessage {
+    border: 1px solid rgb(76, 122, 157);
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    background-color: rgb(76, 122, 157);
+    height: 200px;
+    display: grid;
+    align-items: center;
+}
+
+.viewEditMessage {
+    border: 1px solid rgb(76, 122, 157);
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    background-color: rgb(76, 122, 157);
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 50px);
+    grid-gap: 10px;
+    align-items: center;
+}
+
+#saveChanges {
+    grid-row: 5 / 6;
+    grid-column: 1 / 2;
+}
+
+#cancelChanges {
+    grid-row: 5 / 6;
+    grid-column: 2 / 3;
+}
+
+.viewEditMessage button {
+    width: 70%;
+    font-size: 20px;
+}
+
+.viewDeleteMessage button {
+    width: 40%;
+    justify-self: center;
+    font-size: 14px;
+}
+
+.viewDeleteMessage h3 {
+    animation: none;
+}
+
+.viewEditMessage h2 {
+    grid-column: 1 / -1;
+    font-size: 28px;
+}
+
+.popUpStyle {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.80);
+    color: white;
+    display: grid;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    padding-bottom: 200px;
+    animation: deleteMessage 0.3s;
+}
+
+.popUpStyleEdit {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.80);
+    color: white;
+    display: grid;
+    align-content: center;
+    padding-bottom: 100px;
+    top: 0;
+    left: 0;
+    animation: deleteMessage 0.3s;
+}
+
+#vacationsInfo {
+    border: 1px solid black;
+    display: grid;
+    grid-gap: 10px;
+    width: 960px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+}
+
+#vacationsInfo button {
+    font-size: 15px;
+}
+
+#vacationsGrid {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    grid-template-rows: 80px repeat(4, 1fr) 80px;
+    grid-gap: 20px;
+    align-content: center;
+    justify-items: center;
+}
+
+#vacationsGrid h1 {
+    margin-top: 16px;
+}
+
+#pageNumbersContainer {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#pageNumbers {
+    justify-self: center;
+    display: inline-block;
+    width: 26px;
+    text-align: center;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#getStarted {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0,0,0, 0.42)), url("https://images.unsplash.com/photo-1521098150-2d00c717027b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f45679c1c9a8015a00178369da6c5893&auto=format&fit=crop&w=1979&q=80");
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    
+}
+
+#getStarted a {
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.584);
+}
+
+#getStarted h1 {
+    padding-top: 40px;
+    font-weight: 200;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#mapsGrid {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    grid-template-rows: 1fr;
+}
+
+#googleMap {
+    height: 100vh;
+    width: 100vh;
+}
+
+@media (max-width: 1370px){
+    .vacaPlanInfoRight {
+        font-size: 18px;
+    }
+
+    .vacaPlanInfoLeft {
+        font-size: 18px;
+    }
+
+    .imgSize {
+        width: 400px;
+    }
+
+    #homeContent {
+        grid-template-rows: repeat(3, 380px);
+    }
+}
+
+@media (max-width: 1290px) {
+
+    .vacaPlanInfoLeft {
+        width: 800px;
+    }
+
+    .vacaPlanInfoRight {
+        width: 800px;
+    }
+
+    .vacaPlanInfoLeft .imgSize {
+        justify-self: start;
+    }
+
+    .vacaPlanInfoRight .imgSize {
+        justify-self: end;
+    }
+
+    #createForm {
+        grid-template-columns: repeat(2, 300px);
+    }
+
+    .imgSize {
+        width: 360px;
+    }
+
+    .vacaPlanInfoLeft p {
+        justify-self: center;
+        margin: 0px;
+    }
+
+    #getStarted {
+        padding-top: 40px
+    }
+
+    #getStarted h1 {
+        font-size: 40px;
+    }
+
+    #getStarted a {
+        font-size: 30px;
+    }
+
+    #vacationsInfo {
+        width: 680px;
+    }
+}
+
+@media (max-width: 1000px){
+    #homeMain h1 {
+        font-size: 80px;
+    }
+    
+    #homeMain h3 {
+        font-size: 45px;
+    }
+
+    .vacationLinks {
+        font-size: 30px;
+    }
+
+    #submitForm {
+        justify-self: center;
+        grid-column: 1 / -1;
+    }
+
+    #vacationsInfo {
+        grid-template-columns: 1fr;
+        width: 330px;
+    }
+}
+
+@media (max-width: 930px){
+    #createForm {
+        grid-template-columns: 300px;
+    }
+}
+
+@media (max-width: 840px){
+    .vacaPlanInfoLeft {
+        width: 744px;
+    }
+
+    .vacaPlanInfoRight {
+        width: 744px;
+    }
+}
+
+@media (max-width: 770px){
+    #homeContent {
+        height: 2000px;
+        grid-template-rows: repeat(3, 600px);
+    }
+
+    #homeMain h1 {
+        font-size: 75px;
+    }
+    
+    #homeMain h3 {
+        font-size: 40px;
+    }
+
+    .vacaPlanInfoLeft {
+        grid-template-rows: 80px repeat(3, 135px);
+        width: 100%;
+    }
+
+    .vacaPlanInfoRight {
+        grid-template-rows: 80px repeat(3, 135px);
+        width: 100%;
+    }
+
+    .vacaPlanInfoRight p {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .vacaPlanInfoLeft p {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .paraInfo1 {
+        grid-row: 4 / 5;
+        width: 80%;
+    }
+
+    .paraInfo2 {
+        grid-row: 5 / -1;
+        width: 80%;
+    }
+
+    .vacaPlanInfoLeft .imgSize {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 400px;
+    }
+
+    .vacaPlanInfoRight .imgSize {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 400px;
+    }
+
+    #homeContent h2 {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        text-align: center;
+    }
+}
+
+@media (max-width: 680px){
+    #homeMain h1 {
+        font-size: 65px;
+    }
+    
+    #homeMain h3 {
+        font-size: 30px;
+    }
+
+    .vacationLinks {
+        font-size: 27px;
+    }
+
+    #createForm {
+        grid-template-columns: 300px;
+    }
+
+    .viewEditMessage {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, 50px);
+        grid-gap: 10px;
+    }
+
+    .viewEditMessage h2 {
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+        font-size: 28px;
+    }
+
+    #saveChanges {
+        grid-row: 6 / 7;
+    }
+
+    #cancelChanges {
+        grid-row: 6 / 7;
+    }
+}
+
+@media (max-width: 630px){
+    #navbar {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 50px 50px;
+        height: 100px;
+        width: 100%;
+    }
+
+    #navbar a {
+        font-size: 14px;
+    }
+
+    .navbarDisplay {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        width: 100%;
+    }
+
+    #createForm {
+        grid-column: 1 / -1;
+        grid-row: 4 / 5;
+    }
+
+    .createVaca h1, .createVaca h2 {
+        grid-column: 1 / -1;
+    }
+
+    .createVaca h1 {
+        grid-row: 2 / 3;
+    }
+
+    .createVaca h2 {
+        grid-row: 3 / 4;
+    }
+
+    #vacationsGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 80px repeat(4, 1fr) 80px;
+        grid-gap: 20px;
+        align-content: center;
+        justify-items: center;
+    }
+
+    #vacationsGrid h1 {
+        grid-row: 2 / 3;
+    }
+
+    #navbarDisplay {
+        width: 100%;
+    }
+
+    .viewDeleteMessage {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .viewDeleteMessage button {
+        width: 150px;
+    }
+}
+
+@media (max-width: 560px) {
+    #homeMain h1 {
+        font-size: 55px;
+    }
+    
+    #homeMain h3 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px){
+    .vacaPlanInfoLeft{
+        grid-template-columns: 1fr;
+    }
+
+    .vacaPlanInfoRight{
+        grid-template-columns: 1fr;
+    }
+
+    .paraInfo1 {
+        width: 80%;
+    }
+
+    .paraInfo2 {
+        width: 80%;
+    }
+
+    .vacaPlanInfoLeft .imgSize {
+        width: 350px;
+    }
+
+    .vacaPlanInfoRight .imgSize {
+        width: 350px;
+    }
+
+    .viewEditMessage {
+        width: 90%;
+    }
+
+    .viewEditMessage input {
+        width: 160px;
+        font-size: 15px;
+    }
+
+    .viewEditMessage select {
+        width: 160px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 470px) {
+    #homeMain h1 {
+        font-size: 46px;
+    }
+    
+    #homeMain h3 {
+        font-size: 23px;
+    }
+
+    #getStarted {
+        padding-top: 10px
+    }
+
+    .paraInfo1 {
+        font-size: 18px;
+    }
+
+    .paraInfo2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 430px){
+    .paraInfo1 {
+        font-size: 16px;
+    }
+
+    .paraInfo2 {
+        font-size: 16px;
+    }
+}
