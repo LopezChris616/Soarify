@@ -8,9 +8,11 @@ const Home = () => {
             <div id="homeMain">
                 <h1>Vacation Planner</h1>
                 <h3>Plan The Vacation of Your Dreams!</h3>
-                <Link to="/createVacation" className="vacationLinks">Create A Vacation Plan</Link>
+                <Link to="/signup" className="vacationLinks">Sign Up</Link>
+                <Link to="/login" className="vacationLinks">Login</Link>
                 <Link to="/vacations" className="vacationLinks">View Your Vacation Plans</Link>
-                <Link to="/googleMaps" className="vacationLinks">Google Maps</Link>
+                {/* <Link to="/createVacation" className="vacationLinks">Create A Vacation Plan</Link>
+                <Link to="/googleMaps" className="vacationLinks">Google Maps</Link> */}
             </div>
             
             <div id="homeContent">
@@ -45,7 +47,7 @@ const Home = () => {
             </div>
             <div id="getStarted">
                 <h1>You next vacation begins today!</h1>
-                <Link to="/createVacation" id="getStartedLink">Get Started Now!</Link>
+                <Link to="/signup" id="getStartedLink">Get Started Now!</Link>
             </div>
         </div>
     )

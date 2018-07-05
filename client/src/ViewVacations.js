@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {removeVacation, editVacation} from "./redux";
+import {removeVacation, editVacation} from "./redux/vacations";
 
 class ViewVacations extends Component {
     constructor(){
@@ -9,8 +9,6 @@ class ViewVacations extends Component {
         this.state = {
             isPoppingUpDelete: false,
             isPoppingUpEdit: false,
-            fullName:"",
-            email: "",
             location: "",
             targetDate: "",
             costOfVacation: "",
@@ -34,8 +32,6 @@ class ViewVacations extends Component {
 
     editAVacation = () => {
         this.props.editVacation(this.props.id, {
-            fullName: this.state.fullName,
-            email: this.state.email,
             location: this.state.location,
             targetDate: this.state.targetDate,
             costOfVacation: this.state.costOfVacation,
@@ -48,8 +44,6 @@ class ViewVacations extends Component {
     popUpEdit = () => {
         this.setState(prevState => {
             return {
-                fullName: this.props.name,
-                email: this.props.email,
                 location: this.props.location,
                 targetDate: this.props.date,
                 costOfVacation: this.props.cost,
@@ -74,7 +68,6 @@ class ViewVacations extends Component {
         
         return(
             <div id="vacationsInfo">
-                <h2>Organizer: {this.props.name}</h2>
                 <h2>Location: {this.props.location}</h2>
                 <p>Date: {newDate}</p>
                 <p>Priority: {this.props.priority}</p>
@@ -101,8 +94,6 @@ class ViewVacations extends Component {
                         <form id="editForm" onSubmit={this.popUpEdit} className="popUpStyleEdit">
                         <div className="viewEditMessage">
                         <h2 className="editVacation">Edit Vacation</h2>
-                        <input type="text" name="fullName" placeholder="Full Name" value={this.state.fullName} onChange={this.handleInputChange}/>
-                        <input type="text" name="email" placeholder="Email Address" value={this.state.email} onChange={this.handleInputChange}/>
                         <input type="text" name="location" placeholder="Location of Vacation" value={this.state.location} onChange={this.handleInputChange}/>
                         <input type="date" name="targetDate" placeholder="Target Date" value={this.state.targetDate} onChange={this.handleInputChange}/>
                         <input type="number" name="costOfVacation" placeholder="Cost of Vacation" value={this.state.costOfVacation} onChange={this.handleInputChange}/>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 import Navbar from "./Navbar";
 import { connect } from "react-redux";
-import { getVacations } from "./redux";
+import { getVacations } from "./redux/vacations";
 import Geocode from "react-geocode";
 import Slide from 'react-reveal/Slide';
 

@@ -1,6 +1,8 @@
 import React from "react";
 import {Switch, Route} from "react-router-dom";
 import Home from "./Home";
+import SignUp from "./SignUp";
+import Login from "./Login";
 import Footer from "./Footer";
 import CreateVacation from "./CreateVacation";
 import Vacations from "./Vacations";
@@ -12,8 +14,10 @@ const App = () => {
         <div>
             <Switch>
                 <Route exact path="/" component={Home}/>
-                <Route path="/createVacation" component={CreateVacation}/>
+                <Route path="/signup" component={SignUp}/>
+                <Route path="/login" component={Login}/>
                 <Route path="/vacations" component={Vacations}/>
+                <Route path="/createVacation" component={CreateVacation}/>
                 <Route path="/googleMaps" component={GoogleMaps}/>
             </Switch>
             <Footer/>

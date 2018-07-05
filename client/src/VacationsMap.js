@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {getVacations} from "./redux";
+import {getVacations} from "./redux/vacations";
 import Geocode from "react-geocode";
 import ReactDOM from "react-dom";
 import GoogleMaps from "./GoogleMaps";

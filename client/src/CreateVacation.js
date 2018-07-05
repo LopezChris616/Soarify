@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import {addVacation, getVacations} from "./redux";
+import {addVacation, getVacations} from "./redux/vacations"
 import {connect} from "react-redux";
 import Navbar from "./Navbar";
+import Vacations from "./Vacations";
 import Slide from 'react-reveal/Slide';
 
 class CreateVacation extends Component {
@@ -64,8 +65,6 @@ class CreateVacation extends Component {
                     <h2>Just fill out the form below!</h2>
                     <form id="createForm" onSubmit={this.newVacation}>
                         
-                        <input type="text" name="fullName" placeholder="Full Name" value={this.state.fullName} onChange={this.handleInputChange}/>
-                        <input type="text" name="email" placeholder="Email Address" value={this.state.email} onChange={this.handleInputChange}/>
                         <input type="text" name="location" placeholder="Location of Vacation" value={this.state.location} onChange={this.handleInputChange}/>
                         <input type="date" name="targetDate" placeholder="Target Date" value={this.state.targetDate} onChange={this.handleInputChange}/>
                         <input type="number" name="costOfVacation" placeholder="Cost of Vacation" value={this.state.costOfVacation} onChange={this.handleInputChange}/>
@@ -88,6 +87,7 @@ class CreateVacation extends Component {
                         </select>
                         <button id="submitForm">Submit</button>
                     </form>
+                    <Vacations/>
                     </Slide>
                 </div>
                 
