@@ -6,8 +6,8 @@ const morgan = require("morgan");
 const expressJwt = require("express-jwt");
 const path = require("path");
 const app = express();
-const secret = process.env.SECRET || "some secret random blah"
 
+const secret = process.env.SECRET || "some secret random blah"
 const port = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
