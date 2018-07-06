@@ -21,7 +21,7 @@ class GoogleMaps extends Component {
 
   componentDidMount = () => {
     this.props.getVacations().then(() => {
-        const coordinates = this.props.vacations.map(coordinate => {
+        const coordinates = this.props.vacations.vacations.map(coordinate => {
             const convert = Geocode.fromAddress(coordinate.location);
             return convert;
           })
@@ -61,6 +61,7 @@ class GoogleMaps extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <Slide left>

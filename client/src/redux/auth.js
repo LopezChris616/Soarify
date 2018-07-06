@@ -1,5 +1,12 @@
 import axios from "axios";
 
+const vacaAxios = axios.create();  
+vacaAxios.interceptors.request.use(config => {  
+    const token = localStorage.getItem("token");
+    config.headers.Authorization = `Bearer ${token}`;
+    return config;
+})
+
 export const signup = userInfo => {
     return dispatch => {
         axios.post("/auth/signup", userInfo).then(response => {
@@ -9,6 +16,7 @@ export const signup = userInfo => {
             dispatch(authenticate(user));
         }).catch(err => {
             console.log(err);
+            dispatch(authError("signup", err.response.status));
         })
     }
 }
@@ -21,8 +29,16 @@ export const authenticate = user => {
 }
 
 const initialState = {  
-    username: "",
-    isAuthenticated: false
+    user: {
+        username: "",
+        _id: ""
+    },
+    authErrCode: {
+        signup: "",
+        login: ""
+    },
+    isAuthenticated: false,
+    loading: true
 }
 
 export const reducer = (state = initialState, action) => {
@@ -31,10 +47,24 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.user,
-                isAuthenticated: true
+                isAuthenticated: true,
+                authErrCode: initialState.authErrCode,
+                loading: false
             }
         case "LOGOUT":  
-            return initialState;
+            return {
+                ...initialState,
+                loading: false
+            }
+        case "AUTH_ERROR":
+            return {
+                ...state,
+                authErrCode: {
+                    ...state.authErrCode,
+                    [action.key]: action.errCode
+                },
+                loading: false
+            }
         default:
             return state;
     }
@@ -47,9 +77,10 @@ export const login = credentials => {
             localStorage.setItem("token", token)
             localStorage.setItem("user", JSON.stringify(user));
             dispatch(authenticate(user));
-            console.log(dispatch(authenticate(user)));
+            console.log(response.data);
         }).catch(err => {
             console.log(err);
+            dispatch(authError("login", err.response.status));
         })
     }
 }
@@ -59,6 +90,25 @@ export const logout = () => {
     localStorage.removeItem("user")
     return {
         type: "LOGOUT"
+    }
+}
+
+export const authError = (key, errCode) => {
+    return {
+        type: "AUTH_ERROR",
+        key,
+        errCode
+    }
+}
+
+export const verify = () => {
+    return dispatch => {
+        vacaAxios.get("/api/vacations").then(response => {
+            let {user} = response.data;
+            dispatch(authenticate(user));
+        }).catch(err => {
+            dispatch(authError("verify", err.response.status));
+        })
     }
 }
 

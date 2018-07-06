@@ -20,14 +20,16 @@ class Navbar extends Component {
     }
 
     render(){
+        const {isAuthenticated} = this.props.user;
         return(
             <div className="navbarDisplay">
                     <div id="navbar">
                         <Link to="/" id="navbarHome">Vacation Planner</Link>
-                        <Link to="/signup" className="navbarAlign">Sign Up</Link>
-                        <Link to="/login" className="navbarAlign">Login</Link>
-                        <Link to="/vacations" className="navbarAlign">View Your Vacation Plans</Link>
-                        <button onClick={this.props.logout}>Logout</button>
+                        {!isAuthenticated && <Link to="/signup" className="navbarAlign">Sign Up</Link>}
+                        {!isAuthenticated && <Link to="/login" className="navbarAlign">Login</Link>}
+                        {isAuthenticated && <Link to="/createVacation" className="navbarAlign">View Your Vacation Plans</Link>}
+                        {isAuthenticated && <Link to="/vacationsMap" className="navbarAlign">View On Map</Link>}
+                        {isAuthenticated && <button onClick={this.props.logout}>Logout</button>}
                         {/* <Link to="/createVacation" className="navbarAlign">Create A Vacation Plan</Link>
                         <Link to="/googleMaps" className="navbarAlign">View In Map</Link> */}
                     </div>
@@ -36,4 +38,4 @@ class Navbar extends Component {
     }
 }
 
-export default connect(null, {logout})(Navbar);
+export default connect(state => state, {logout})(Navbar);

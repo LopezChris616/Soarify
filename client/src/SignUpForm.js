@@ -40,9 +40,17 @@ class SignUpForm extends Component {
     }
  
     render(){
+        let authErrCode = this.props.user.authErrCode.signup;
+        let errMsg = "";
+        if (authErrCode < 500 && authErrCode > 399) {
+            errMsg = "Username is already taken!";
+        } else if (authErrCode > 499) {
+            errMsg = "Server error!";
+        }
         return(
             <div id="signupLoginForm">
                 <h1>Sign Up to start planning your next vacation!</h1>
+                <p>{errMsg}</p>
                 <form id="signupLogin" onSubmit={this.handleSubmit}>
                     <input type="text" name="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleInputChange}/>
                     <input type="text" name="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInputChange}/>
@@ -55,4 +63,4 @@ class SignUpForm extends Component {
     }
 }
 
-export default connect(null, {signup})(SignUpForm);
+export default connect(state => state, {signup})(SignUpForm);

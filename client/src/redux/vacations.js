@@ -1,6 +1,4 @@
 import axios from "axios";
-import {createStore, applyMiddleware} from "redux";
-import thunk from "redux-thunk";
 
 let vacaAxios = axios.create();
 

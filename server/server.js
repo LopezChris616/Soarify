@@ -11,8 +11,8 @@ const port = 8000;
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 app.use("/api", expressJwt({secret: process.env.SECRET}));
-app.use("/auth", require("./routes/auth"));
 app.use("/api/vacations", require("./routes/vacations"));
+app.use("/auth", require("./routes/auth"));
 
 mongoose.connect("mongodb://localhost/vacationLocations", err => {
     if(err) throw err;

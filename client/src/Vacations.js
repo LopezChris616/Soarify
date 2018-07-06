@@ -15,9 +15,6 @@ class Vacations extends Component {
     }
 
     render(){
-        console.log(this.props.vacations.vacations);
- 
-
         const showVaca = this.props.vacations.vacations.map(vacation => {
             return <ViewVacations 
                 key={vacation._id} 
