@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {getVacations, removeVacation} from "../redux/vacations";
 import ViewVacations from "./ViewVacations";
-import Navbar from "../NavAndFoot/Navbar";
 import Slide from 'react-reveal/Slide';
 
 class Vacations extends Component {

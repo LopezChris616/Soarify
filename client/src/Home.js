@@ -8,7 +8,6 @@ class Home extends Component {
         super();
     }
     render(){
-        console.log(this.props);
         const {isAuthenticated} = this.props.user;
         return(
             <div>
@@ -19,8 +18,6 @@ class Home extends Component {
                     {!isAuthenticated && <Link to="/login" className="vacationLinks">Login</Link>}
                     {isAuthenticated && <Link to="/createVacation" className="vacationLinks">View Your Vacation Plans</Link>}
                     {isAuthenticated && <Link to="/vacationsMap" className="vacationLinks">View On Map</Link>}
-                    {/* <Link to="/createVacation" className="vacationLinks">Create A Vacation Plan</Link>
-                    <Link to="/googleMaps" className="vacationLinks">Google Maps</Link> */}
                 </div>
                 
                 <div id="homeContent">

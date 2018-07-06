@@ -180,12 +180,13 @@
     height: 1200px;
     display: grid;
     grid-template-columns: 270px repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 200px);
 }
 
 .createVaca h1 {
-    grid-column: 2/ -1;
-    margin-top: 30px;
+    grid-column: 2 / -1;
+    /* margin-top: 30px;  */
+    align-self: center;
 }
 
 .createVaca h2 {

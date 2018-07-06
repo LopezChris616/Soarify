@@ -57,7 +57,6 @@ class CreateVacation extends Component {
     render(){
         return(
             <div>
-                
                 <div className="createVaca">
                 <Navbar/>
                 <Slide right>
