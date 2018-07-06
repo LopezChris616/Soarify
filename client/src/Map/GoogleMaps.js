@@ -4,6 +4,7 @@ import Navbar from "../NavAndFoot/Navbar";
 import { connect } from "react-redux";
 import { getVacations } from "../redux/vacations";
 import Geocode from "react-geocode";
+import Geocoder from "geocoder";
 import Slide from 'react-reveal/Slide';
 
 

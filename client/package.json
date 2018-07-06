@@ -8,6 +8,7 @@
     "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-polyfill": "^6.26.0",
+    "geocoder": "^0.2.3",
     "google-maps-react": "^2.0.2",
     "moment": "^2.22.2",
     "react": "^16.4.1",
