@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const expressJwt = require("express-jwt");
 const path = require("path");
 const app = express();
-const secret = process.env.SECRET || "a secret that nobody will ever figure out haha"
+const secret = process.env.SECRET || "some secret random blah"
 
 const port = process.env.PORT || 8000;
 
