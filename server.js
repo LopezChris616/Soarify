@@ -12,7 +12,7 @@ const port = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
 app.use(morgan("dev"));
-app.use("/api", expressJwt({secret: process.env.SECRET}));
+app.use("/api", expressJwt({secret: secret}));
 app.use("/api/vacations", require("./routes/vacations"));
 app.use("/auth", require("./routes/auth"));
 app.use(express.static(path.join(__dirname, "client", "build")));
