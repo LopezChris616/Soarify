@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import Home from "./Home";
-import SignUp from "./SignUp";
-import Login from "./Login";
-import Footer from "./Footer";
-import CreateVacation from "./CreateVacation";
-import Vacations from "./Vacations";
-import GoogleMaps from "./GoogleMaps";
+import SignUp from "./SignUp/SignUp";
+import Login from "./Login/Login";
+import Footer from "./NavAndFoot/Footer";
+import CreateVacation from "./Vacations/CreateVacation";
+import Vacations from "./Vacations/Vacations";
+import GoogleMaps from "./Map/GoogleMaps";
 import ProtectedRoute from "./ProtectedRoute";
 import {Route, Switch, withRouter, Redirect} from "react-router-dom";
 import {verify} from "./redux/auth";
