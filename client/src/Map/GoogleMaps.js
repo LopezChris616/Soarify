@@ -21,6 +21,9 @@ class GoogleMaps extends Component {
   }
 
   componentDidMount = () => {
+
+    //will need to use new package for google maps geocoding as previous one is broken
+
     // this.props.getVacations().then(() => {
     //     const coordinates = this.props.vacations.vacations.map(coordinate => {
     //         const convert = Geocode.fromAddress(coordinate.location);
