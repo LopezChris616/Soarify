@@ -68,7 +68,7 @@ class ViewVacations extends Component {
         
         return(
             <div id="vacationsInfo">
-                <h2>Location: {this.props.location}</h2>
+                <h2 id="location">Location: {this.props.location}</h2>
                 <p>Date: {newDate}</p>
                 <p>Priority: {this.props.priority}</p>
                 <p>Vacation Cost: ${this.props.cost.toLocaleString("en-us")}</p>

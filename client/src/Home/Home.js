@@ -29,6 +29,7 @@ class Home extends Component {
                     info1="Organized and straight to the point, our planning system gives you everything you need to ensure that you plan your trip the way you want to!"
                     info2="We'll let you know when your trip is approaching and let you know once everything is ready."
                     alt="man relaxing on beach"
+                    titleContent="homeTitleContent"
                     />
 
                     <HomeContent 
@@ -48,6 +49,7 @@ class Home extends Component {
                     info1="Need to update the target date of your vacation? Maybe change who's going? You have the ability to update whatever area of your plan that you deem neccessary."
                     info2="We have integrated Google Maps to help you ensure that you have made the right decision on your choice for your next vacation."
                     alt="snowboarders on a snow-filled mountain"
+                    titleContent="homeTitleContent"
                     />
                     
                 </div>

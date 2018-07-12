@@ -4,7 +4,7 @@ import Navbar from "../NavAndFoot/Navbar";
 
 const Login = () => {
     return(
-        <div id="signupLoginGrid">
+        <div id="signUpContainer">
             <Navbar/>
             <LoginForm/>
         </div>

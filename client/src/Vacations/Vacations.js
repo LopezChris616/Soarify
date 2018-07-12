@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {getVacations, removeVacation} from "../redux/vacations";
 import ViewVacations from "./ViewVacations";
-import Slide from 'react-reveal/Slide';
+// import Slide from 'react-reveal/Slide';
 
 class Vacations extends Component {
     constructor(){
@@ -27,20 +27,21 @@ class Vacations extends Component {
                 priority={vacation.priority}
                 purpose={vacation.purpose}/>
         })
-      
+
+        if(this.props.vacations.vacations.length < 1){
+           return <h1 id="noVacations">Please add a vacation with the form above...</h1>
+        }
         return(
-            <div>
                 <div id="vacationsGrid">
-                    <Slide right>
+                    {/* <Slide right> */}
                     <h1 id="vacaPlans">Your Vacation Plans</h1>
-                    </Slide>
+                    {/* {this.props.vacations.vacations.length < 1 ? <h1 id="noVacations">Please add a vacation with the form above...</h1> : null} */}
+                    {/* </Slide> */}
                     <div id="viewVaca">
                         {showVaca}
                     </div>
                     
-                </div>
-               
-            </div>   
+                </div>  
         )
     }
 }

@@ -56,11 +56,11 @@ class CreateVacation extends Component {
 
     render(){
         return(
-            <div>
-                <div className="createVaca">
+            <div id="createVacaContainer">
                 <Navbar/>
+                <div className="createVaca">
                 <Slide right>
-                    <h1>Plan Your Next Vacation</h1>
+                    <h1 id="planVaca">Plan Your Next Vacation</h1>
                     <h2>Just fill out the form below!</h2>
                     <form id="createForm" onSubmit={this.newVacation}>
                         
@@ -86,8 +86,9 @@ class CreateVacation extends Component {
                         </select>
                         <button id="submitForm">Submit</button>
                     </form>
-                    <Vacations/>
+                    
                     </Slide>
+                    <Vacations/>
                 </div>
                 
             </div>
