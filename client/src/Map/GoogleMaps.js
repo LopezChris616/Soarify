@@ -13,16 +13,17 @@ class GoogleMaps extends Component {
     super();
     this.state = {
       coords: [],
-      lat: 39.50,
+      lat: 44.50,
       lng: -94.35,
       zoom: 4,
-      zoomedOut: true
+      zoomedOut: true,
+      poppedUp: true
     }
   }
 
   componentDidMount = () => {
 
-    //will need to use new package for google maps geocoding as previous one is broken
+    //will need to use new npm package for google maps geocoding as previous one is broken
 
     // this.props.getVacations().then(() => {
     //     const coordinates = this.props.vacations.vacations.map(coordinate => {
@@ -64,6 +65,14 @@ class GoogleMaps extends Component {
     //  });
   }
 
+  notPoppedIn = () => {
+    this.setState(prevState => {
+      return {
+        poppedUp: !prevState.poppedUp
+      }
+    })
+  }
+
   render() {
     console.log(this.props);
     return (
@@ -72,6 +81,17 @@ class GoogleMaps extends Component {
         <div id="mapsGrid">
           <Navbar />
           <div id="googleMap">
+          {this.state.poppedUp ? 
+          <div id="mapsMessage">
+          <div id="mapMessageStyle">
+          <p>Hello! Thanks for checking out Soarify.</p> 
+          <p>We are currently working on Google Maps integration, which will soon include Markers for each location of your vacation.</p>
+          <p>For now, feel free to explore the world and look for some inspiration for your next vacation!</p>
+        <p>All the best,</p>
+      <p>The Soarify Team</p>
+      <button onClick={this.notPoppedIn}>Got it!</button>
+      </div>
+      </div> : null }
               <Map google={this.props.google} 
               zoom={this.state.zoom} 
               center={{lat: this.state.lat, lng: this.state.lng}}>
