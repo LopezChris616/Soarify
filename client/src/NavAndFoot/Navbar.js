@@ -23,7 +23,7 @@ class Navbar extends Component {
         const {isAuthenticated} = this.props.user;
         return(
                 <div id="navbar">
-                    <Link to="/" id="navbarHome">Vacation Planner</Link>
+                    <Link to="/" id="navbarHome">Soarify</Link>
                     {!isAuthenticated && <Link to="/signup" className="navbarAlign">Sign Up</Link>}
                     {!isAuthenticated && <Link to="/login" className="navbarAlign">Login</Link>}
                     {isAuthenticated && <Link to="/createVacation" className="navbarAlign">View Your Vacation Plans</Link>}

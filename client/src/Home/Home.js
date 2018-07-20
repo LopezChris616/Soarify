@@ -46,8 +46,8 @@ class Home extends Component {
                     class="vacaPlanInfoLeft" 
                     title="View On Google Maps" 
                     image="https://images.unsplash.com/photo-1519659675643-e5885721661f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3da8dd6e70d17bd7be1c76cff7c3ac5e&auto=format&fit=crop&w=1650&q=80"
-                    info1="Need to update the target date of your vacation? Maybe change who's going? You have the ability to update whatever area of your plan that you deem neccessary."
-                    info2="We have integrated Google Maps to help you ensure that you have made the right decision on your choice for your next vacation."
+                    info1="Not sure where to go next? Maybe you'd like a visual representation of where you are planning on going? We've got the perfect solution!"
+                    info2="We have integrated Google Maps to help you ensure that you have made the right decision on your choice for your next vacation and to help you figure out where you'd like to go to next"
                     alt="snowboarders on a snow-filled mountain"
                     titleContent="homeTitleContent"
                     />
