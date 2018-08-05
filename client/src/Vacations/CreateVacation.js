@@ -21,6 +21,10 @@ class CreateVacation extends Component {
         }
     }
 
+    componentDidMount(){
+        document.title = "Your Vacation Plans";
+    }
+
     handleInputChange = event => {
         const {name, value} = event.target;
         this.setState({

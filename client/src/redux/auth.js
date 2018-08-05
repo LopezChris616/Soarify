@@ -77,7 +77,6 @@ export const login = credentials => {
             localStorage.setItem("token", token)
             localStorage.setItem("user", JSON.stringify(user));
             dispatch(authenticate(user));
-            console.log(response.data);
         }).catch(err => {
             console.log(err);
             dispatch(authError("login", err.response.status));

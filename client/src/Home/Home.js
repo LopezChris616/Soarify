@@ -7,6 +7,12 @@ class Home extends Component {
     constructor(){
         super();
     }
+
+    componentDidMount(){
+        document.title = "Soarify | Soar To The Vacation of Your Dreams!"
+    }
+
+
     render(){
         const {isAuthenticated} = this.props.user;
         return(
@@ -55,7 +61,8 @@ class Home extends Component {
                 </div>
                 <div id="getStarted">
                     <h1>Your next vacation begins today!</h1>
-                    <Link to="/signup" id="getStartedLink">Get Started Now!</Link>
+                    {!isAuthenticated && <Link to="/signup" id="getStartedLink">Get Started Now!</Link>}
+                    {isAuthenticated && <Link to ="/createVacation" id="getStartedLink">View Your Vacations</Link>}
                 </div>
             </div>
         )

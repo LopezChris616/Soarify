@@ -12,6 +12,10 @@ class LoginForm extends Component {
         }
     }
 
+    componentDidMount(){
+        document.title = "Login";
+    }
+
     handleInputChange = event => {
         const {name, value} = event.target;
         this.setState({

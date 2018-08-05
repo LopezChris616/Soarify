@@ -14,6 +14,10 @@ class SignUpForm extends Component {
         }
     }
 
+    componentDidMount(){
+        document.title = "Sign Up"
+    }
+
     handleInputChange = event => {
         const {name, value} = event.target;
         this.setState({

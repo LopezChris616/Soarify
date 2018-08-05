@@ -23,8 +23,6 @@ class GoogleMaps extends Component {
 
   componentDidMount = () => {
 
-    //will need to use new npm package for google maps geocoding as previous one is broken
-
     this.props.getVacations().then(() => {
         const coordinates = this.props.vacations.vacations.map(coordinate => {
             const convert = Geocode.fromAddress(coordinate.location);
@@ -63,6 +61,8 @@ class GoogleMaps extends Component {
             })
           })
      });
+
+     document.title = "Vacations Map";
   }
 
   notPoppedIn = () => {
@@ -74,7 +74,6 @@ class GoogleMaps extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <Slide left>
