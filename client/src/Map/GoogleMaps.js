@@ -4,8 +4,6 @@ import Navbar from "../NavAndFoot/Navbar";
 import { connect } from "react-redux";
 import { getVacations } from "../redux/vacations";
 import Geocode from "react-geocode";
-import Geocoder from "geocoder";
-import Slide from 'react-reveal/Slide';
 
 
 class GoogleMaps extends Component {
@@ -17,12 +15,10 @@ class GoogleMaps extends Component {
       lng: -94.35,
       zoom: 4,
       zoomedOut: true,
-      poppedUp: true
     }
   }
 
   componentDidMount = () => {
-
     this.props.getVacations().then(() => {
         const coordinates = this.props.vacations.vacations.map(coordinate => {
             const convert = Geocode.fromAddress(coordinate.location);
@@ -38,7 +34,7 @@ class GoogleMaps extends Component {
                   animation={2} 
                   onClick={() => 
                     this.state.zoomedOut ? 
-                    this.setState( prevState => {
+                    this.setState(prevState => {
                       return {
                         zoom: 14, 
                         lat: lat, 
@@ -65,32 +61,12 @@ class GoogleMaps extends Component {
      document.title = "Vacations Map";
   }
 
-  notPoppedIn = () => {
-    this.setState(prevState => {
-      return {
-        poppedUp: !prevState.poppedUp
-      }
-    })
-  }
-
   render() {
     return (
       <div>
-        <Slide left>
         <div id="mapsGrid">
           <Navbar />
           <div id="googleMap">
-          {/* {this.state.poppedUp ? 
-          <div id="mapsMessage">
-          <div id="mapMessageStyle">
-          <p>Hello! Thanks for checking out Soarify.</p> 
-          <p>We are currently working on Google Maps integration, which will soon include Markers for each location of your vacation.</p>
-          <p>For now, feel free to explore the world and look for some inspiration for your next vacation!</p>
-        <p>All the best,</p>
-      <p>The Soarify Team</p>
-      <button onClick={this.notPoppedIn}>Got it!</button>
-      </div>
-      </div> : null } */}
               <Map google={this.props.google} 
               zoom={this.state.zoom} 
               center={{lat: this.state.lat, lng: this.state.lng}}>
@@ -98,9 +74,7 @@ class GoogleMaps extends Component {
               </Map>
           </div>
         </div>
-        </Slide>
       </div>
-      
     )
   }
 }
