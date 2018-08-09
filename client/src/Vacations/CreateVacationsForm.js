@@ -9,11 +9,11 @@ const CreateVacationForm = props => {
                 <h1 id="planVaca">Plan Your Next Vacation</h1>
                 <h2>Just fill out the form below!</h2>
                 <form id="createForm" onSubmit={props.addVaca}> 
-                    <input type="text" name="location" placeholder="Location of Vacation" value={props.location} onChange={props.inputChange}/>
-                    <input type="date" name="targetDate" placeholder="Target Date" value={props.date} onChange={props.inputChange}/>
-                    <input type="number" name="costOfVacation" placeholder="Cost of Vacation" value={props.cost} onChange={props.inputChange}/>
-                    <input type="number" name="currentMoney" placeholder="Vacation Fund" value={props.currentMoney} onChange={props.inputChange}/>
-                    <select name="priority" value={props.priority} onChange={props.inputChange}>
+                    <input type="text" name="location" placeholder="Location of Vacation" value={props.location} onChange={props.inputChange} required/>
+                    <input type="date" name="targetDate" placeholder="Target Date" value={props.date} onChange={props.inputChange} required/>
+                    <input type="number" name="costOfVacation" placeholder="Cost of Vacation" value={props.cost} onChange={props.inputChange} required/>
+                    <input type="number" name="currentMoney" placeholder="Vacation Fund" value={props.currentMoney} onChange={props.inputChange} required/>
+                    <select name="priority" value={props.priority} onChange={props.inputChange} required>
                         <option value="Priority">Priority</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -21,7 +21,7 @@ const CreateVacationForm = props => {
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <select name="purpose" value={props.purpose} onChange={props.inputChange}>
+                    <select name="purpose" value={props.purpose} onChange={props.inputChange} required>
                         <option value="Purpose of Vacation">Purpose of Vacation</option>
                         <option value="Family Vacation">Family Vacation</option>
                         <option value="Business Trip">Business Trip</option>

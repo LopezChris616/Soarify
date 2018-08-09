@@ -1,24 +1,25 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import HomeContent from "./HomeContent"; 
-import {Link} from  "react-router-dom";
-import {connect} from "react-redux";
+import { Link } from  "react-router-dom";
+import { connect } from "react-redux";
+import { Helmet } from "react-helmet";
 
 class Home extends Component {
     constructor(){
         super();
     }
 
-    componentDidMount(){
-        document.title = "Soarify | Soar To The Vacation of Your Dreams!"
-    }
-
-
     render(){
         const {isAuthenticated} = this.props.user;
         return(
             <div>
 
-                <div id="homeMain">
+                <Helmet>
+                    <title>Soarify | Soar To The Vacation of Your Dreams!</title>
+                    <meta name="description" content="Soarify is a simple to use vacation planner that allows you to keep track of locations you will like to visit around the world."/>
+                </Helmet>
+
+                <div id="homeMain" itemScope>
                     <h1>Soarify</h1>
                     <h3>Soar To The Vacation of Your Dreams!</h3>
                     {!isAuthenticated && <Link to="/signup" className="vacationLinks">Sign Up</Link>}
@@ -27,7 +28,7 @@ class Home extends Component {
                     {isAuthenticated && <Link to="/vacationsMap" className="vacationLinks">View On Map</Link>}
                 </div>
   
-                <div id="homeContent">
+                <div id="homeContent" itemScope itemType="http://schema.org/Trip">
                     <HomeContent
                     class="vacaPlanInfoLeft" 
                     title="Create Your Plan" 
@@ -45,7 +46,7 @@ class Home extends Component {
                     info1="Need to update the target date of your vacation? Maybe change who's going? You have the ability to update whatever area of your plan that you deem neccessary."
                     info2="You will always be in charge of your own plan."
                     alt="woman looking at the view from the top of a mountain"
-                    titleContent="homeTitleContent"
+                    titleContent="homeTitleContentLeft"
                     />
 
                     <HomeContent 

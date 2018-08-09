@@ -78,6 +78,10 @@
     grid-column: 2 / -1;
 }
 
+.homeTitleContentLeft {
+    grid-column: 1 / 2;
+}
+
 .vacaPlanInfoLeft {
     display: grid;
     width: 60%;
