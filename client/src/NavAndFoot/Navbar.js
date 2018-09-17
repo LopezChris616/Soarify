@@ -29,8 +29,6 @@ class Navbar extends Component {
                     {isAuthenticated && <Link to="/createVacation" className="navbarAlign">View Your Vacation Plans</Link>}
                     {isAuthenticated && <Link to="/vacationsMap" className="navbarAlign">View On Map</Link>}
                     {isAuthenticated && <button onClick={this.props.logout}>Logout</button>}
-                    {/* <Link to="/createVacation" className="navbarAlign">Create A Vacation Plan</Link>
-                    <Link to="/googleMaps" className="navbarAlign">View In Map</Link> */}
                 </div>
         )
     }
