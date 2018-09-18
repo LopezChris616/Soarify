@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
-    height: 900px;
+    height: 100vh;
     color: white;
     display: grid;
     grid-template-rows: 130px repeat(2, 80px);
@@ -278,10 +278,6 @@ select {
 #submitForm {
     width: 40%;
     font-size: 20px;
-}
-
-span {
-    color: red;
 }
 
 @keyframes deleteMessage {
