@@ -28,7 +28,8 @@ class Home extends Component {
                     {isAuthenticated && <Link to="/vacationsMap" className="vacationLinks">View On Map</Link>}
                 </div>
   
-                <div id="homeContent" itemScope itemType="http://schema.org/Trip">
+                {/* <div id="homeContent" itemScope itemType="http://schema.org/Trip"> */}
+                <div>
                     <HomeContent
                     class="vacaPlanInfoLeft" 
                     title="Create Your Plan" 

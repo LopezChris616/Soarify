@@ -53,15 +53,17 @@ class SignUpForm extends Component {
         }
         return(
             <div id="signupLoginForm">
-                <h1>Sign Up to start planning your next vacation!</h1>
-                <p>{errMsg}</p>
-                <form id="signupLogin" onSubmit={this.handleSubmit}>
-                    <input type="text" name="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleInputChange}/>
-                    <input type="text" name="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInputChange}/>
-                    <input type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.handleInputChange}/>
-                    <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleInputChange}/>
-                    <button>Submit</button>
-                </form>
+                <div class="signUpLoginBg">
+                    <h1>Sign Up to start planning your next vacation!</h1>
+                    <p>{errMsg}</p>
+                    <form id="signupLogin" onSubmit={this.handleSubmit}>
+                        <input type="text" name="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleInputChange}/>
+                        <input type="text" name="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInputChange}/>
+                        <input type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.handleInputChange}/>
+                        <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleInputChange}/>
+                        <button>Submit</button>
+                    </form>
+                </div>
             </div>
         )
     }
