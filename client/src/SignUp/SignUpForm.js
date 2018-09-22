@@ -1,6 +1,6 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
-import {signup} from "../redux/auth";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { signup } from "../redux/auth";
 
 class SignUpForm extends Component {
     constructor(){
@@ -52,8 +52,8 @@ class SignUpForm extends Component {
             errMsg = "Server error!";
         }
         return(
-            <div id="signupLoginForm">
-                <div class="signUpLoginBg">
+            <div>
+                {/* <div class="signUpLoginBg">
                     <h1>Sign Up to start planning your next vacation!</h1>
                     <p>{errMsg}</p>
                     <form id="signupLogin" onSubmit={this.handleSubmit}>
@@ -63,7 +63,7 @@ class SignUpForm extends Component {
                         <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleInputChange}/>
                         <button>Submit</button>
                     </form>
-                </div>
+                </div> */}
             </div>
         )
     }

@@ -1,38 +1,19 @@
 import React, { Component } from "react";
-import compose from "recompose/compose";
 import HomeContent from "./HomeContent"; 
 import { Link } from  "react-router-dom";
 import { connect } from "react-redux";
-import { Helmet } from "react-helmet";
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-
-const styles = theme => ({
-    button: {
-    //   margin: theme.spacing.unit,
-      marginRight: "20px", 
-      fontSize: "20px"
-    },
-    homeIntro1: {
-        // fontSize: "4vw",
-        color: "white"
-    },
-    homeIntro2: {
-        // fontSize: "4vw",
-        color: "white"
-    }
-  });
 
 class Home extends Component {
     constructor(){
         super();
     }
 
+    componentDidMount = () => {
+        document.title = "Soarify | Soar To The Vacation of Your Dreams!";
+    }
+
     render(){
         const {isAuthenticated} = this.props.user;
-        const { classes } = this.props; 
         const aboutSoarify = [
             {
                 title: "Create Your Plan",
@@ -70,19 +51,41 @@ class Home extends Component {
         })
         return(
             <div>
-                <Helmet>
-                    <title>Soarify | Soar To The Vacation of Your Dreams!</title>
-                    <meta name="description" content="Soarify is a simple to use vacation planner that allows you to keep track of locations you will like to visit around the world."/>
-                </Helmet>
+                <header id="home-header">
+                    <div id="header-content">
+                    <h1>Soarify</h1>
+                   <h3>Plan Your Next Vacation At Ease!</h3>
+                   {!isAuthenticated && <Link to="/signup">Sign Up</Link>}
+                   {!isAuthenticated && <Link to="/login">Login</Link>}
+                   {isAuthenticated && <Link to="/createVacation">View Your Vacation Plans</Link>}
+                   {isAuthenticated && <Link to="/googleMaps">View On Google Maps</Link>}
+                    </div>
 
-                <div id="homeMain">
-                    <Grid container justify="center" direction="row" alignContent="center" style={{height: "inherit", textAlign: "center"}}>
+                </header>
+  
+                <div>
+                    {displayAbout}
+                </div>
+                <div id="getStarted">
+
+                    {/* {!isAuthenticated && <Link to="/signup" id="getStartedLink">Get Started Now!</Link>} */}
+                    {/* {isAuthenticated && <Link to ="/createVacation" id="getStartedLink">View Your Vacations</Link>} */}
+                </div>
+            </div>
+        )
+    }
+
+}
+export default connect(state => state, {})(Home);
+
+
+          {/* <Grid container justify="center" direction="row" alignContent="center" style={{height: "inherit", textAlign: "center"}}>
                         <Grid item xs={12}>
-                            <Typography variant="display4" className={classes.homeIntro1}>Soarify</Typography>
+                            <Typography variant="display4" className={classes.homeIntro} id="title">Soarify</Typography>
                         </Grid>
                          
                         <Grid item xs={12}>
-                            <Typography variant="display3" className={classes.homeIntro2}>Soar To The Vacation of Your Dreams!</Typography>
+                            <Typography variant="display3" className={classes.homeIntro}>Plan Your Vacation At Ease!</Typography>
                         </Grid>
 
                         {!isAuthenticated && 
@@ -104,33 +107,19 @@ class Home extends Component {
                         <Button variant="contained" color="primary" component={Link} to="/vacationsMap" className={classes.button}>
                             View On Google Maps
                         </Button>}
-                    </Grid>
-                   
-                </div>
-  
-                <div>
-                    {displayAbout}
-                </div>
-                <div id="getStarted" style={{padding: 40}}>
-                    <Typography variant="display2" style={{color: "white", marginTop: 15}}>
-                        Your next vacation begins today!
-                    </Typography>
-                    {!isAuthenticated && 
-                        <Button variant="contained" color="primary" component={Link} to="/signup" style={{marginBottom: 15}} size="large">
-                            Get Started Now!
-                        </Button>}
+                    </Grid> */}
 
-                        {isAuthenticated && 
-                        <Button variant="contained" color="primary" component={Link} to="/createVacation" className={classes.button} size="large">
-                            View Your Vacations
-                        </Button>}
 
-                    {/* {!isAuthenticated && <Link to="/signup" id="getStartedLink">Get Started Now!</Link>} */}
-                    {/* {isAuthenticated && <Link to ="/createVacation" id="getStartedLink">View Your Vacations</Link>} */}
-                </div>
-            </div>
-        )
-    }
 
-}
-export default compose(withStyles(styles), connect(state => state, {}))(Home);
+//   <Typography variant="display3" className={classes.homeIntro} style={{color: "white", marginTop: 15}}>
+//                         Your next vacation begins today!
+//                     </Typography>
+//                     {!isAuthenticated && 
+//                         <Button variant="contained" color="primary" component={Link} to="/signup" style={{marginBottom: 15}} size="large">
+//                             Get Started Now!
+//                         </Button>}
+
+//                         {isAuthenticated && 
+//                         <Button variant="contained" color="primary" component={Link} to="/createVacation" className={classes.button} size="large">
+//                             View Your Vacations
+//                         </Button>}

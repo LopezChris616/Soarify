@@ -4,7 +4,7 @@ import SignUpForm from "./SignUpForm";
 
 const SignUp = () => { 
     return(
-        <div id="signUpContainer">
+        <div>
             <Navbar/>
             <SignUpForm/>
         </div>

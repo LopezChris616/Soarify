@@ -1,37 +1,72 @@
 import React, {Component} from "react";
-import {connect} from "react-redux";
-import {logout} from "../redux/auth";
-import {Link} from "react-router-dom";
+import NavbarItems from "./NavbarItems";
 
 class Navbar extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            navbarDisplayed: false
+            mobileOpen: false
         }
     }
-    
-    handleNav = () => {
-        this.setState(prevState => {
-            return {
-                navbarDisplayed: !prevState.navbarDisplayed
-            }
-        })
-    }
+
+    handleDrawerToggle = () => {
+      this.setState(state => ({ mobileOpen: !state.mobileOpen }));
+    };
 
     render(){
-        const {isAuthenticated} = this.props.user;
         return(
-                <div id="navbar">
-                    <Link to="/" id="navbarHome">Soarify</Link>
-                    {!isAuthenticated && <Link to="/signup" className="navbarAlign">Sign Up</Link>}
-                    {!isAuthenticated && <Link to="/login" className="navbarAlign">Login</Link>}
-                    {isAuthenticated && <Link to="/createVacation" className="navbarAlign">View Your Vacation Plans</Link>}
-                    {isAuthenticated && <Link to="/vacationsMap" className="navbarAlign">View On Map</Link>}
-                    {isAuthenticated && <button onClick={this.props.logout}>Logout</button>}
-                </div>
+          <div>
+
+          </div>
         )
     }
 }
 
-export default connect(state => state, {logout})(Navbar);
+export default Navbar;
+
+
+      {/* <AppBar className={classes.appBar}>
+              <Toolbar>
+                <IconButton
+                  color="inherit"
+                  aria-label="Open drawer"
+                  onClick={this.handleDrawerToggle}
+                  className={classes.navIconHide}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="title" color="inherit" noWrap>
+                  Soarify
+                </Typography>
+              </Toolbar>
+            </AppBar>
+            <Hidden mdUp>
+          <Drawer
+            variant="temporary"
+            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+            open={this.state.mobileOpen}
+            onClose={this.handleDrawerToggle}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+          >
+            <NavbarItems />
+          </Drawer>
+        </Hidden>      
+        <Hidden smDown implementation="css">
+          <Drawer
+            variant="permanent"
+            open
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+          >
+            <NavbarItems />
+          </Drawer>
+        </Hidden>
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+        </main>   */}
