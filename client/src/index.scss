@@ -2,14 +2,14 @@
 $background-gradient: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 $background-size: cover;
 $background-repeat: no-repeat;
-$font-color: white;
-$link-spacing: 0.6rem;
-$center-align: center;
+// $font-color: white;
+// $link-spacing: 0.6rem;
+// $center-align: center;
 
-@mixin hover-transition($duration) {
-    -webkit-transition: $duration;
-    transition: $duration;
-}
+// @mixin hover-transition($duration) {
+//     -webkit-transition: $duration;
+//     transition: $duration;
+// }
 
 // global styles
 * {
@@ -17,66 +17,113 @@ $center-align: center;
     font-family: Poppins;
 }
 
-a {
-    text-decoration: none;
-    color: $font-color;
-    margin: $link-spacing;
-    padding: $link-spacing;
-    border-radius: 6%;
-    display: block;
-    width: 80vw;
-    text-align: center;
-}
-
-// home page
+// home page header
 #home-header {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding-top: 200px;
     background: {
-        image: $background-gradient, url("https://images.unsplash.com/photo-1516655855035-d5215bcb5604?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5da3abb226e19a58e7391bc6bde89d81&auto=format&fit=crop&w=1050&q=80");
+        image: $background-gradient, url("https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=04c27a9ea6ed87838d712ae831afa974&auto=format&fit=crop&w=1050&q=80");
         size: $background-size;
         repeat: $background-repeat;
         position: center;
     }
-    height: 100vh;
-    width: 100%;
-    a {
-        background-color: rgb(0, 162, 255);
-        font-size: 2rem;
-        @include hover-transition(.5s);
-        &:hover {
-            background-color: rgba(0, 162, 255, 0.8);
-        }
-    }
     h1, h3 {
-        color: $font-color;
-        width: 50%;
-        display: inline-block;
-        @media (max-width: 400px){
-            text-align: $center-align;
-            width: 90vw;
-        }
+        color: white;
     }
     h1 {
-        font-size: 6rem;
-        @media (max-width: 400px){
-            font-size: 5rem;
-        }
+        font-size: 4.5rem;
     }
     h3 {
-        font-size: 2.5rem;
-        @media (max-width: 400px){
-            font-size: 1.8rem;
-        }
+        font-size: 2rem;
     }
-    #header-content {
-        padding: 7% 0px 0px 7%;
-        @media (max-width: 400px){
-            padding: 0;
+    a {
+        margin-top: 10px;
+    }
+}
+
+#get-started {
+    background: {
+        image: $background-gradient , url("https://images.unsplash.com/photo-1539035104074-dee66086b5e3?ixlib=rb-0.3.5&s=868aa77630cc040c043fe66cc65f43dd&auto=format&fit=crop&w=1050&q=80");
+        size: $background-size;
+        repeat: $background-repeat;
+        position: left center;
+    }
+    color: white;
+    text-align: center;
+}
+
+//footer
+#footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    h3 {
+        display: inline;
+        a {
+            color: white;
+            text-decoration: underline;
         }
     }
 }
 
 
-// media queries
-@media (max-width: 400px){
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     a {
+//         background-color: rgb(0, 162, 255);
+//         font-size: 2rem;
+//         @include hover-transition(.5s);
+//         &:hover {
+//             background-color: rgba(0, 162, 255, 0.8);
+//         }
+//     }
+//     h1, h3 {
+//         color: $font-color;
+//         width: 50%;
+//         display: inline-block;
+//         @media (max-width: 400px){
+//             text-align: $center-align;
+//             width: 90vw;
+//         }
+//     }
+//     h1 {
+//         font-size: 6rem;
+//         @media (max-width: 400px){
+//             font-size: 5rem;
+//         }
+//     }
+//     h3 {
+//         font-size: 2.5rem;
+//         @media (max-width: 400px){
+//             font-size: 1.8rem;
+//         }
+//     }
+//     #header-content {
+//         padding: 7% 0px 0px 7%;
+//         @media (max-width: 400px){
+//             padding: 0;
+//         }
+//     }
+// }
+
+
+// // media queries
+// @media (max-width: 400px){
+
+// 
