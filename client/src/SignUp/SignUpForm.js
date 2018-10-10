@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signup } from "../redux/auth";
-import { Col, Row, Button, Form, FormGroup, Label, Input, FormText, Container } from 'reactstrap';
+import { Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
 class SignUpForm extends Component {
     constructor(){
@@ -85,7 +85,7 @@ class SignUpForm extends Component {
                                 </FormGroup>
                             </Col>
                         </Row>
-                        <Button color="primary" size="lg">Submit</Button>
+                        <Button color="primary" size="lg">Sign Up</Button>
                     </Form>
                 </Container>
             </div>

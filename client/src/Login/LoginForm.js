@@ -1,6 +1,7 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
-import {login} from "../redux/auth";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { login } from "../redux/auth";
+import { Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
 class LoginForm extends Component {
     constructor(){
@@ -44,17 +45,44 @@ class LoginForm extends Component {
             errMsg = "Server error!";
         }
         return(
-            <div id="signupLoginForm">
-                <h1>Login to view your vacation plans!</h1>
-                <p>{errMsg}</p>
-                <form id="signupLogin" onSubmit={this.handleSubmit}>
-                    <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} value={this.state.username}/>
-                    <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} value={this.state.password}/>
-                    <button>Submit</button>
-                </form>
+            <div id="login">
+                <Container>
+                    <h1>Login</h1>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Row form>
+                            <Col xs="12" lg="5">
+                                <FormGroup>
+                                    <Label for="username">Username</Label>
+                                    <Input type="text" name="username" id="username" onChange={this.handleInputChange} value={this.state.username} />  
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                        <Row form>
+                            <Col xs="12" lg="5">
+                                <FormGroup>
+                                    <Label for="password">Password</Label>
+                                    <Input type="password" name="password" id="password" onChange={this.handleInputChange} value={this.state.password} />  
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                        <Button color="primary" size="lg">Login</Button>
+                    </Form>
+                </Container>
             </div>
         )
     }
 }
 
 export default connect(state => state, {login})(LoginForm);
+
+
+
+
+
+                // <h1>Login to view your vacation plans!</h1>
+                // <p>{errMsg}</p>
+                // <form id="signupLogin" onSubmit={this.handleSubmit}>
+                //     <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} value={this.state.username}/>
+                //     <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} value={this.state.password}/>
+                //     <button>Submit</button>
+                // </form>
