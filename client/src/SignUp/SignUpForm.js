@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signup } from "../redux/auth";
+import { Col, Row, Button, Form, FormGroup, Label, Input, FormText, Container } from 'reactstrap';
 
 class SignUpForm extends Component {
     constructor(){
@@ -52,7 +53,52 @@ class SignUpForm extends Component {
             errMsg = "Server error!";
         }
         return(
-            <div>
+            <div id="sign-up">
+                <Container>
+                    <h1>Sign Up</h1>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Row form>
+                            <Col xs="12" md="4">
+                                <FormGroup>
+                                    <Label for="first-name">First Name</Label>
+                                    <Input type="text" name="firstName" id="first-name" onChange={this.handleInputChange} value={this.state.firstName} />                                    
+                                </FormGroup>
+                            </Col>
+                            <Col xs="12" md="4">
+                                <FormGroup>
+                                    <Label for="last-name">Last Name</Label>
+                                    <Input type="text" name="lastName" id="last-name" onChange={this.handleInputChange} value={this.state.lastName} />                                    
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                        <Row form>
+                            <Col xs="12" md="4">
+                                <FormGroup>
+                                    <Label for="username">Username</Label>
+                                    <Input type="text" name="username" id="username" onChange={this.handleInputChange} value={this.state.username} />                                    
+                                </FormGroup>
+                            </Col>
+                            <Col xs="12" md="4">
+                                <FormGroup>
+                                    <Label for="password">Password</Label>
+                                    <Input type="password" name="password" id="password" onChange={this.handleInputChange} value={this.state.password} />                                    
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                        <Button color="primary" size="lg">Submit</Button>
+                    </Form>
+                </Container>
+            </div>
+        )
+    }
+}
+
+export default connect(state => state, {signup})(SignUpForm);
+
+
+
+
+
                 {/* <div class="signUpLoginBg">
                     <h1>Sign Up to start planning your next vacation!</h1>
                     <p>{errMsg}</p>
@@ -64,9 +110,3 @@ class SignUpForm extends Component {
                         <button>Submit</button>
                     </form>
                 </div> */}
-            </div>
-        )
-    }
-}
-
-export default connect(state => state, {signup})(SignUpForm);
