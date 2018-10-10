@@ -45,7 +45,7 @@ $background-repeat: no-repeat;
 
 #get-started {
     background: {
-        image: $background-gradient , url("https://images.unsplash.com/photo-1539035104074-dee66086b5e3?ixlib=rb-0.3.5&s=868aa77630cc040c043fe66cc65f43dd&auto=format&fit=crop&w=1050&q=80");
+        image: $background-gradient, url("https://images.unsplash.com/photo-1539035104074-dee66086b5e3?ixlib=rb-0.3.5&s=868aa77630cc040c043fe66cc65f43dd&auto=format&fit=crop&w=1050&q=80");
         size: $background-size;
         repeat: $background-repeat;
         position: left center;
@@ -69,6 +69,18 @@ $background-repeat: no-repeat;
     }
 }
 
+//sign up
+#sign-up {
+    background: {
+        image: $background-gradient, url("https://images.unsplash.com/photo-1504326008149-71dbc00aa3ae?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3e82e4e35e856a7507fb7f7c4eef10e5&auto=format&fit=crop&w=1050&q=80");
+        size: $background-size;
+        repeat: $background-repeat;
+        position: bottom;
+    }
+    height: 100vh;
+    color: white;
+    padding-top: 150px;
+}
 
 
 
