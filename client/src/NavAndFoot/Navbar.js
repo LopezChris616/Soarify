@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
 import { Link } from  "react-router-dom";
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { logout } from "../redux/auth";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Button } from 'reactstrap';
 
 class Navigation extends Component {
     constructor(props){
@@ -32,7 +33,10 @@ class Navigation extends Component {
                   </NavItem>
                   <NavItem>
                     {!isAuthenticated && <NavLink tag={Link} to="/login">Login</NavLink>}
-                    {isAuthenticated && <NavLink tag={Link} to="/googleMaps">View On Google Maps</NavLink>}
+                    {isAuthenticated && <NavLink tag={Link} to="/vacationsMap">View On Google Maps</NavLink>}
+                  </NavItem>
+                  <NavItem>
+                    {isAuthenticated && <Button color="secondary" outline size="sm" onClick={this.props.logout}>Logout</Button>}
                   </NavItem>
                 </Nav>
               </Collapse>
@@ -42,4 +46,4 @@ class Navigation extends Component {
     }
 }
 
-export default connect(state => state, {})(Navigation);
+export default connect(state => state, {logout})(Navigation);

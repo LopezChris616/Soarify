@@ -48,6 +48,7 @@ class LoginForm extends Component {
             <div id="login">
                 <Container>
                     <h1>Login</h1>
+                    <p>{errMsg}</p>
                     <Form onSubmit={this.handleSubmit}>
                         <Row form>
                             <Col xs="12" lg="5">

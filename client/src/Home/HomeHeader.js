@@ -24,7 +24,7 @@ const HomeHeader = props => {
                     <Row>
                         <Col>
                             {!isAuthenticated && <Button color="primary" size="lg" tag={Link} to="/login">Login</Button>}
-                            {isAuthenticated && <Button color="primary" size="lg" tag={Link} to="/googleMaps">View On Google Maps</Button>}
+                            {isAuthenticated && <Button color="primary" size="lg" tag={Link} to="/vacationsMap">View On Google Maps</Button>}
                         </Col>
                     </Row>
                 </Container>
