@@ -3,7 +3,6 @@ import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 import Navbar from "../NavAndFoot/Navbar";
 import { connect } from "react-redux";
 import { getVacations } from "../redux/vacations";
-import { Row, Col } from "reactstrap";
 import Geocode from "react-geocode";
 
 class GoogleMaps extends Component {

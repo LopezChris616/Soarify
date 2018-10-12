@@ -5,7 +5,6 @@ import UpdateAPlan from "./UpdateAPlan";
 import ViewOnMap from "./ViewOnMap";
 import GetStarted from "./GetStarted";
 import Footer from "../NavAndFoot/Footer"
-import { Link } from  "react-router-dom";
 import { connect } from "react-redux";
 import { Container } from 'reactstrap';
 
@@ -22,35 +21,6 @@ class Home extends Component {
         return(
             <div>
                 <HomeHeader />
-
-
-
-                {/* won't remove this  until I'm sure that I don't need it anymore */}
-                {/* <header id="home-header">
-                    <Container id="home-intro">
-                        <Row>
-                            <Col><h1>Soarify</h1></Col>
-                        </Row>
-                        <Row>
-                            <Col><h3>Soar To The Vacations of Your Dreams!</h3></Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                {!isAuthenticated && <Button color="primary" size="lg" tag={Link} to="/signup">Sign Up</Button>}
-                                {isAuthenticated && <Button color="primary" size="lg" tag={Link} to="/createVacation">View Your Vacation Plans</Button>}
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                {!isAuthenticated && <Button color="primary" size="lg" tag={Link} to="/login">Login</Button>}
-                                {isAuthenticated && <Button color="primary" size="lg" tag={Link} to="/googleMaps">View On Google Maps</Button>}
-                            </Col>
-                        </Row>
-                    </Container>
-                </header> */}
-
-
-
                 <h2 style={{textAlign: "center", textDecoration: "underline", paddingTop: "40px"}}>Create A Plan</h2>
                 <Container style={{padding: "50px 10px"}}>
                     <CreatePlanContainer />
@@ -65,7 +35,6 @@ class Home extends Component {
                     <GetStarted />
                 </div>
                 <Footer />
-  
             </div>
         )
     }
