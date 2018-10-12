@@ -39,7 +39,7 @@ class Vacations extends Component {
         return(
             <div>
                 <Container>
-                    <Table responsive hover id="vacation-table">
+                    <Table responsive hover dark id="vacation-table">
                         <thead>
                             <tr>
                                 <th>Your Vacation Plans</th>

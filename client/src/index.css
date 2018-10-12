@@ -1,5 +1,4 @@
 * {
-  margin: 0;
   font-family: Poppins; }
 
 #home-header {
@@ -32,9 +31,10 @@
   background-color: #007BFF;
   color: white;
   text-align: center;
-  padding: 15px; }
+  padding: 10px; }
   #footer h3 {
-    display: inline; }
+    display: inline;
+    font-size: 16px; }
     #footer h3 a {
       color: white;
       text-decoration: underline; }
@@ -47,6 +47,16 @@
   height: 92.5vh;
   color: white;
   padding-top: 150px; }
+  @media (max-width: 767px) {
+    #sign-up {
+      padding-top: 50px; } }
+
+#login-signup-link {
+  margin-left: 10px;
+  font-size: 15px;
+  color: white; }
+  #login-signup-link:hover {
+    text-decoration: underline; }
 
 #login {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://images.unsplash.com/photo-1468779823294-9824b5b9a1b2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=77af828f29cefb724b4a5f51ca7e192c&auto=format&fit=crop&w=1055&q=80");
@@ -56,6 +66,13 @@
   height: 92.5vh;
   color: white;
   padding-top: 150px; }
+
+#createVacaContainer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://images.unsplash.com/photo-1505642257289-9f2d7dd73641?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=00a0e335423175c41a7b880e80cd5b48&auto=format&fit=crop&w=1094&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: white; }
 
 #create-vacation-form {
   margin-top: 40px; }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signup } from "../redux/auth";
+import { Link } from  "react-router-dom";
 import { Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
 class SignUpForm extends Component {
@@ -56,6 +57,7 @@ class SignUpForm extends Component {
             <div id="sign-up">
                 <Container>
                     <h1>Sign Up</h1>
+                    <p>{errMsg}</p>
                     <Form onSubmit={this.handleSubmit}>
                         <Row form>
                             <Col xs="12" md="4">
@@ -85,7 +87,8 @@ class SignUpForm extends Component {
                                 </FormGroup>
                             </Col>
                         </Row>
-                        <Button color="primary" size="lg">Sign Up</Button>
+                        <Button color="primary" size="md">Sign Up</Button>
+                        <Link to="/login" id="login-signup-link">Already have an account?</Link>
                     </Form>
                 </Container>
             </div>
@@ -94,19 +97,3 @@ class SignUpForm extends Component {
 }
 
 export default connect(state => state, {signup})(SignUpForm);
-
-
-
-
-
-                {/* <div class="signUpLoginBg">
-                    <h1>Sign Up to start planning your next vacation!</h1>
-                    <p>{errMsg}</p>
-                    <form id="signupLogin" onSubmit={this.handleSubmit}>
-                        <input type="text" name="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleInputChange}/>
-                        <input type="text" name="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleInputChange}/>
-                        <input type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.handleInputChange}/>
-                        <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleInputChange}/>
-                        <button>Submit</button>
-                    </form>
-                </div> */}

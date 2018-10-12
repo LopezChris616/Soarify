@@ -7,12 +7,12 @@ const VacationsInfo = props => {
             <th scope="row">{props.number + 1}</th>
             <td>{props.location}</td>
             <td>{props.date}</td>
-            <td>${props.cost}</td>
-            <td>${props.currentFunds}</td>
-            <td>{props.priority}</td>
+            <td>Cost: ${props.cost}</td>
+            <td>Current Funds: ${props.currentFunds}</td>
+            <td>Priority: {props.priority}</td>
             <td>{props.purpose}</td>
             <td><Button onClick={props.popupEditToggle}>Edit</Button></td>
-            <td><Button onClick={props.popupDeleteToggle}>Delete</Button></td>
+            <td><Button color="danger" onClick={props.popupDeleteToggle}>Delete</Button></td>
         </tr>
     )
 }

@@ -42,6 +42,7 @@ class ViewVacations extends Component {
             priority: this.state.priority,
             purpose: this.state.purpose
         })
+        this.popUpEdit();
     }
 
     popUpEdit = () => {

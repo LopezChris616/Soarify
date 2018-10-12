@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { login } from "../redux/auth";
+import { Link } from  "react-router-dom";
 import { Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
 class LoginForm extends Component {
@@ -67,6 +68,7 @@ class LoginForm extends Component {
                             </Col>
                         </Row>
                         <Button color="primary" size="lg">Login</Button>
+                        <Link to="/signup" id="login-signup-link">Need an account?</Link>
                     </Form>
                 </Container>
             </div>
