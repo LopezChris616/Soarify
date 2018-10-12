@@ -78,19 +78,20 @@ class ViewVacations extends Component {
                 cost={this.props.cost.toLocaleString("en-us")}
                 currentFunds={this.props.currentFunds.toLocaleString("en-us")}
                 purpose={this.props.purpose}
-                popUpDelete={this.popUpDelete}
-                popUpEdit={this.popUpEdit}
+                popupDeleteToggle={this.popUpDelete}
+                popupEditToggle={this.popUpEdit}
+                number={this.props.number}
                 />
 
                 <VacationsDelete 
-                deleteConfirm={this.state.isPoppingUpDelete}
+                isDeleting={this.state.isPoppingUpDelete}
                 deleteVaca={this.deleteVacation}
-                noDelete={this.popUpDelete}
+                popupDeleteToggle={this.popUpDelete}
                 />
 
                 <VacationsEdit 
                 isEditing={this.state.isPoppingUpEdit}
-                editVaca={this.popUpEdit}
+                popupEditToggle={this.popUpEdit}
                 saveEdit={this.editAVacation}
                 location={this.state.location}
                 inputChange={this.handleInputChange}
