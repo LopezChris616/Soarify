@@ -3,12 +3,12 @@ import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 import Navbar from "../NavAndFoot/Navbar";
 import { connect } from "react-redux";
 import { getVacations } from "../redux/vacations";
+import { Row, Col } from "reactstrap";
 import Geocode from "react-geocode";
 
-
 class GoogleMaps extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       coords: [],
       lat: 44.50,
@@ -21,6 +21,7 @@ class GoogleMaps extends Component {
   componentDidMount = () => {
     this.props.getVacations().then(() => {
         const coordinates = this.props.vacations.vacations.map(coordinate => {
+            Geocode.setApiKey("AIzaSyDCU_sR1UA5seRsI-3OuP-jHKEkr06TZPk");
             const convert = Geocode.fromAddress(coordinate.location);
             return convert;
           })
@@ -64,10 +65,11 @@ class GoogleMaps extends Component {
   render() {
     return (
       <div>
-        <div id="mapsGrid">
+        <div>
           <Navbar />
-          <div id="googleMap">
-              <Map google={this.props.google} 
+          <div>
+              <Map 
+              google={this.props.google}
               zoom={this.state.zoom} 
               center={{lat: this.state.lat, lng: this.state.lng}}>
               {this.state.coords}

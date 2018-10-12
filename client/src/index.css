@@ -57,9 +57,6 @@
   color: white;
   padding-top: 150px; }
 
-#create-vacation-container {
-  height: 92.5vh; }
-
 #create-vacation-form {
   margin-top: 40px; }
 
@@ -68,3 +65,6 @@
 
 .modal-dialog {
   max-width: 800px; }
+
+#no-vacations {
+  text-align: center; }

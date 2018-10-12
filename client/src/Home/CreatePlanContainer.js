@@ -1,9 +1,8 @@
 import React from "react";
-import Slide from 'react-reveal/Zoom';
 import CreateAPlan from "./CreateAPlan";
 import { Row } from 'reactstrap';
 
-const CreatePlanContainer = props => {
+const CreatePlanContainer = () => {
     const createPlanInfo = [
         {
             title: "Stay Organized",
@@ -25,13 +24,14 @@ const CreatePlanContainer = props => {
         }
     ]
 
-    const createPlanDisplay = createPlanInfo.map(section => {
+    const createPlanDisplay = createPlanInfo.map((section, i) => {
         return (
             <CreateAPlan 
             title={section.title}
             image={section.image}
             body={section.body}
             alt={section.alt}
+            key={i}
             />
         )
     }) 

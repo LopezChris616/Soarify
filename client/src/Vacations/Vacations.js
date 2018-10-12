@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getVacations, removeVacation } from "../redux/vacations";
 import ViewVacations from "./ViewVacations";
-import VacationsEdit from "./VacationsEdit";
-import VacationsDelete from "./VacationsDelete";
 import { Table, Container } from 'reactstrap';
 
 class Vacations extends Component {
@@ -35,7 +33,7 @@ class Vacations extends Component {
         })
 
         if(this.props.vacations.vacations.length < 1){
-           return <h1 id="noVacations">Please add a vacation with the form above...</h1>
+           return <h1 id="no-vacations">Please add a vacation with the form above...</h1>
         }
 
         return(

@@ -3,13 +3,7 @@ $background-gradient: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 $background-size: cover;
 $background-repeat: no-repeat;
 $font-color: white;
-// $link-spacing: 0.6rem;
 $center-align: center;
-
-// @mixin hover-transition($duration) {
-//     -webkit-transition: $duration;
-//     transition: $duration;
-// }
 
 // global styles
 * {
@@ -96,10 +90,6 @@ $center-align: center;
 }
 
 //create vacation
-#create-vacation-container {
-    height: 92.5vh;
-}
-
 #create-vacation-form {
     margin-top: 40px;
 }
@@ -110,4 +100,8 @@ $center-align: center;
 
 .modal-dialog {
     max-width: 800px;
+}
+
+#no-vacations {
+    text-align: center;
 }
