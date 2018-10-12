@@ -1,17 +1,19 @@
 import React from "react";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 
 const VacationsDelete = props => {
     return(
         <div>
-            {props.deleteConfirm ? 
-            <div className="popUpStyle">
-                <div className="viewDeleteMessage">
-                    <h2>Are you sure you want to remove this vacation?</h2>
-                    <h3>There is no going back...</h3>
-                    <button onClick={props.deleteVaca}>Yes, I am sure.</button>
-                    <button onClick={props.noDelete}>Nevermind!</button>
-                </div>
-            </div> : null}
+            <Modal isOpen={props.isDeleting} toggle={props.popupDeleteToggle}>
+            <ModalHeader toggle={props.popupDeleteToggle}>Are you sure you want to delete?</ModalHeader>
+            <ModalBody>
+                There is no going back after deleting...
+            </ModalBody>
+            <ModalFooter>
+                <Button color="danger" onClick={props.deleteVaca}>Delete</Button>
+                <Button color="secondary" onClick={props.popupDeleteToggle}>Cancel</Button>
+            </ModalFooter>
+            </Modal>
         </div>
     )
 }

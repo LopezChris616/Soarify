@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getVacations, removeVacation } from "../redux/vacations";
 import ViewVacations from "./ViewVacations";
+import VacationsEdit from "./VacationsEdit";
+import VacationsDelete from "./VacationsDelete";
+import { Table, Container } from 'reactstrap';
 
 class Vacations extends Component {
     constructor(){
@@ -13,19 +16,22 @@ class Vacations extends Component {
     }
 
     render(){
-        const showVaca = this.props.vacations.vacations.map(vacation => {
-            return <ViewVacations 
-                key={vacation._id} 
-                id={vacation._id}
-                name={vacation.fullName} 
-                email={vacation.email} 
-                location={vacation.location} 
-                date={vacation.targetDate} 
-                cost={vacation.costOfVacation} 
-                currentFunds={vacation.currentMoney} 
-                priority={vacation.priority}
-                purpose={vacation.purpose}
-                />
+        const showVaca = this.props.vacations.vacations.map((vacation, i) => {
+            return (
+                    <ViewVacations 
+                    key={vacation._id} 
+                    id={vacation._id}
+                    name={vacation.fullName} 
+                    email={vacation.email} 
+                    location={vacation.location} 
+                    date={vacation.targetDate} 
+                    cost={vacation.costOfVacation} 
+                    currentFunds={vacation.currentMoney} 
+                    priority={vacation.priority}
+                    purpose={vacation.purpose}
+                    number={i}
+                    />
+            )
         })
 
         if(this.props.vacations.vacations.length < 1){
@@ -33,13 +39,20 @@ class Vacations extends Component {
         }
 
         return(
-                <div id="vacationsGrid">
-                    <h1 id="vacaPlans">Your Vacation Plans</h1>
-                    <div id="viewVaca">
-                        {showVaca}
-                    </div>
-                    
-                </div>  
+            <div>
+                <Container>
+                    <Table responsive hover id="vacation-table">
+                        <thead>
+                            <tr>
+                                <th>Your Vacation Plans</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {showVaca}
+                            </tbody>
+                    </Table>
+                </Container>
+            </div>  
         )
     }
 }
