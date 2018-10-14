@@ -19,7 +19,7 @@ class Home extends Component {
 
     render(){
         return(
-            <div>
+            <div id="app-container">
                 <HomeHeader />
                 <h2 style={{textAlign: "center", textDecoration: "underline", paddingTop: "40px"}}>Create A Plan</h2>
                 <Container style={{padding: "50px 10px"}}>

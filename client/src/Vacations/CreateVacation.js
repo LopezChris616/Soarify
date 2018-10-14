@@ -59,7 +59,7 @@ class CreateVacation extends Component {
 
     render(){
         return(
-            <div id="createVacaContainer">
+            <div id="create-vacation-container">
                 <Navbar/>
                 <CreateVacationsForm 
                 location={this.state.location}

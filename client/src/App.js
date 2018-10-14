@@ -23,7 +23,7 @@ class App extends Component {
         return(
             <div>
                 {loading ?
-                    <div>Loading User Data...</div>
+                    <h1 style={{textAlign: "center", paddingTop: "100px"}}>Loading...</h1>
                     :
                 <Switch>
                     <Route exact path="/" component={Home}/>

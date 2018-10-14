@@ -4,7 +4,7 @@ import { Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reac
 
 const CreateVacationForm = props => {
     return(
-        <div id="create-vacation-container">
+        <div id="create-vacation">
             <Container id="create-vacation-form">
                 <h1>Create A Vacation Plan</h1>
                 <Form onSubmit={props.addVaca}>

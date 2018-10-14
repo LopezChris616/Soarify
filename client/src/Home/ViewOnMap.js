@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from 'reactstrap';
 import FontAwesome from "react-fontawesome";
 
-const ViewOnMap = props => {
+const ViewOnMap = () => {
     return(
         <div style={{padding: "80px 10px"}}>
             <h2 style={{textDecoration: "underline", textAlign: "center", paddingBottom: "20px"}}>View On Google Maps</h2>
@@ -20,7 +20,6 @@ const ViewOnMap = props => {
                 </Row>
             </Container>
         </div>
-
     )
 }
 
