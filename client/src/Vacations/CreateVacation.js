@@ -1,79 +1,76 @@
-import React, { Component } from "react";
-import { addVacation, getVacations } from "../redux/vacations"
-import { connect } from "react-redux";
-import Navbar from "../NavAndFoot/Navbar";
-import CreateVacationsForm from "./CreateVacationsForm";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addVacation, getVacations } from '../redux/vacations';
+import Navbar from '../NavAndFoot/Navbar';
+import CreateVacationsForm from './CreateVacationsForm';
 
 class CreateVacation extends Component {
-    constructor(props){
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            fullName: "",
-            email: "",
-            location: "",
-            targetDate: "",
-            costOfVacation: "",
-            currentMoney: "",
-            priority: "",
-            purpose: ""
-        }
+    this.state = { fullName: '',
+      email: '',
+      location: '',
+      targetDate: '',
+      costOfVacation: '',
+      currentMoney: '',
+      priority: '',
+      purpose: '' };
+  }
+
+  componentDidMount() {
+    document.title = 'Your Vacation Plans';
+  }
+
+    handleInputChange = (event) => {
+      const { name, value } = event.target;
+      this.setState({ [name]: value });
     }
 
-    componentDidMount(){
-        document.title = "Your Vacation Plans";
+    newVacation = (event) => {
+      event.preventDefault();
+
+      const { fullName, email, location, targetDate, costOfVacation, currentMoney, priority, purpose } = this.state;
+
+      this.props.addVacation({ fullName,
+        email,
+        location,
+        targetDate,
+        costOfVacation,
+        currentMoney,
+        priority,
+        purpose });
+
+      this.setState({ fullName: '',
+        email: '',
+        location: '',
+        targetDate: '',
+        costOfVacation: '',
+        currentMoney: '',
+        priority: '',
+        purpose: '' });
     }
 
-    handleInputChange = event => {
-        const {name, value} = event.target;
-        this.setState({
-            [name]: value
-        })
-    }
-
-    newVacation = event => {
-        event.preventDefault();
-
-        this.props.addVacation({
-            fullName: this.state.fullName,
-            email: this.state.email,
-            location: this.state.location,
-            targetDate: this.state.targetDate,
-            costOfVacation: this.state.costOfVacation,
-            currentMoney: this.state.currentMoney,
-            priority: this.state.priority,
-            purpose: this.state.purpose
-        })
-
-        this.setState({
-            fullName: "",
-            email: "",
-            location: "",
-            targetDate: "",
-            costOfVacation: "",
-            currentMoney: "",
-            priority: "",
-            purpose: ""
-        })
-    }
-
-    render(){
-        return(
-            <div id="create-vacation-container">
-                <Navbar/>
-                <CreateVacationsForm 
-                location={this.state.location}
-                inputChange={this.handleInputChange}
-                date={this.state.targetDate}
-                cost={this.state.costOfVacation}
-                currentMoney={this.state.currentMoney}
-                priority={this.state.priority}
-                purpose={this.state.purpose}
-                addVaca={this.newVacation}
-                />
-            </div>
-        )
+    render() {
+      const { location, targetDate, costOfVacation, currentMoney, priority, purpose } = this.state;
+      return (
+        <div id="create-vacation-container">
+          <Navbar />
+          <CreateVacationsForm
+            location={location}
+            inputChange={this.handleInputChange}
+            date={targetDate}
+            cost={costOfVacation}
+            currentMoney={currentMoney}
+            priority={priority}
+            purpose={purpose}
+            addVaca={this.newVacation}
+          />
+        </div>
+      );
     }
 }
 
-export default connect(state => ({vacations: state}), {addVacation, getVacations})(CreateVacation);
+export default connect(
+  state => ({ vacations: state }), { addVacation, getVacations },
+)(CreateVacation);

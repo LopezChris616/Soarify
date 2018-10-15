@@ -14,7 +14,7 @@ import './index.css';
 
 class App extends Component {
     componentDidMount = () => {
-      verify = this.props;
+     const {verify} = this.props;
       verify();
     }
 
