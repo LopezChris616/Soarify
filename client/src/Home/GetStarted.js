@@ -1,12 +1,11 @@
 import React from 'react';
-import {
-  Button, Container, Row, Col,
-} from 'reactstrap';
+import { Button, Container, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const GetStarted = (props) => {
-  const { isAuthenticated } = props.user;
+  const { user } = props;
+  const { isAuthenticated } = user;
   return (
     <div id="get-started">
       <Container style={{ padding: '50px 10px' }}>

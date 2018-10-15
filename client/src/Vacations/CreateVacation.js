@@ -5,8 +5,8 @@ import Navbar from "../NavAndFoot/Navbar";
 import CreateVacationsForm from "./CreateVacationsForm";
 
 class CreateVacation extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state = {
             fullName: "",
