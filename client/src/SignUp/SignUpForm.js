@@ -25,9 +25,9 @@ class SignUpForm extends Component {
 
     handleSubmit = (event) => {
       event.preventDefault();
-
+      const { signupConnect } = this.props;
       const { firstName, lastName, username, password } = this.state;
-      this.props.signup({ firstName,
+      signupConnect({ firstName,
         lastName,
         username,
         password });
@@ -91,4 +91,4 @@ class SignUpForm extends Component {
     }
 }
 
-export default connect(state => state, { signup })(SignUpForm);
+export default connect(state => state, { signupConnect: signup })(SignUpForm);

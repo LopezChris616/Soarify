@@ -31,8 +31,8 @@ class CreateVacation extends Component {
       event.preventDefault();
 
       const { fullName, email, location, targetDate, costOfVacation, currentMoney, priority, purpose } = this.state;
-
-      this.props.addVacation({ fullName,
+      const { addVacationConnect } = this.props;
+      addVacationConnect({ fullName,
         email,
         location,
         targetDate,
@@ -72,5 +72,5 @@ class CreateVacation extends Component {
 }
 
 export default connect(
-  state => ({ vacations: state }), { addVacation, getVacations },
+  state => ({ vacations: state }), { addVacationConnect: addVacation, getVacations },
 )(CreateVacation);

@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 const GetStarted = (props) => {
   const { user } = props;
-  const { isAuthenticated } = user;
   return (
     <div id="get-started">
       <Container style={{ padding: '50px 10px' }}>
@@ -16,8 +15,8 @@ const GetStarted = (props) => {
         </Row>
         <Row>
           <Col>
-            {!isAuthenticated && <Button tag={Link} color="primary" size="lg" to="/signup">Get Started</Button>}
-            {isAuthenticated && <Button tag={Link} color="primary" to="/createVacation">View Your Vacation Plans</Button>}
+            {!user.isAuthenticated && <Button tag={Link} color="primary" size="lg" to="/signup">Get Started</Button>}
+            {user.isAuthenticated && <Button tag={Link} color="primary" to="/createVacation">View Your Vacation Plans</Button>}
           </Col>
         </Row>
       </Container>

@@ -23,14 +23,18 @@ class LoginForm extends Component {
 
     handleSubmit = (event) => {
       event.preventDefault();
-      this.props.login({ username: this.state.username,
-        password: this.state.password });
+      const { username, password } = this.state;
+      const { loginConnect } = this.props;
+      loginConnect({ username,
+        password });
       this.setState({ username: '',
         password: '' });
     }
 
     render() {
-      const authErrCode = this.props.user.authErrCode.login;
+      const { user } = this.props;
+      const { username, password } = this.state;
+      const authErrCode = user.authErrCode.login;
       let errMsg = '';
       if (authErrCode < 500 && authErrCode > 399) {
         errMsg = 'Invalid username or password!';
@@ -47,7 +51,7 @@ class LoginForm extends Component {
                 <Col xs="12" lg="5">
                   <FormGroup>
                     <Label for="username">Username</Label>
-                    <Input type="text" name="username" id="username" onChange={this.handleInputChange} value={this.state.username} />
+                    <Input type="text" name="username" id="username" onChange={this.handleInputChange} value={username} />
                   </FormGroup>
                 </Col>
               </Row>
@@ -55,7 +59,7 @@ class LoginForm extends Component {
                 <Col xs="12" lg="5">
                   <FormGroup>
                     <Label for="password">Password</Label>
-                    <Input type="password" name="password" id="password" onChange={this.handleInputChange} value={this.state.password} />
+                    <Input type="password" name="password" id="password" onChange={this.handleInputChange} value={password} />
                   </FormGroup>
                 </Col>
               </Row>
@@ -68,4 +72,4 @@ class LoginForm extends Component {
     }
 }
 
-export default connect(state => state, { login })(LoginForm);
+export default connect(state => state, { loginConnect: login })(LoginForm);

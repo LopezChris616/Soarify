@@ -1,110 +1,101 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { removeVacation, editVacation } from "../redux/vacations";
-import VacationsInfo from "./VacationsInfo";
-import VacationsEdit from "./VacationsEdit";
-import VacationsDelete from "./VacationsDelete";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { removeVacation, editVacation } from '../redux/vacations';
+import VacationsInfo from './VacationsInfo';
+import VacationsEdit from './VacationsEdit';
+import VacationsDelete from './VacationsDelete';
 
 class ViewVacations extends Component {
-    constructor(){
-        super();
+  constructor() {
+    super();
 
-        this.state = {
-            isPoppingUpDelete: false,
-            isPoppingUpEdit: false,
-            location: "",
-            targetDate: "",
-            costOfVacation: "",
-            currentMoney: "",
-            priority: "",
-            purpose: ""
-        }
-    }
+    this.state = { isPoppingUpDelete: false,
+      isPoppingUpEdit: false,
+      location2: '',
+      targetDate: '',
+      costOfVacation: '',
+      currentMoney: '',
+      priority2: '',
+      purpose2: '' };
+  }
 
     deleteVacation = () => {
-        this.props.removeVacation(this.props.id);
+      const { removeVacationConnect, id } = this.props;
+      removeVacationConnect(id);
     }
 
     popUpDelete = () => {
-        this.setState(prevState => {
-            return {
-                isPoppingUpDelete: !prevState.isPoppingUpDelete
-            }
-        })
+      this.setState(prevState => ({ isPoppingUpDelete: !prevState.isPoppingUpDelete }));
     }
 
     editAVacation = () => {
-        this.props.editVacation(this.props.id, {
-            location: this.state.location,
-            targetDate: this.state.targetDate,
-            costOfVacation: this.state.costOfVacation,
-            currentMoney: this.state.currentMoney,
-            priority: this.state.priority,
-            purpose: this.state.purpose
-        })
-        this.popUpEdit();
+      const { editVacationConnect, id } = this.props;
+      const { location, targetDate, costOfVacation, currentMoney, priority, purpose } = this.state;
+      editVacationConnect(id, { location,
+        targetDate,
+        costOfVacation,
+        currentMoney,
+        priority,
+        purpose });
+      this.popUpEdit();
     }
 
     popUpEdit = () => {
-        this.setState(prevState => {
-            return {
-                location: this.props.location,
-                targetDate: this.props.date,
-                costOfVacation: this.props.cost,
-                currentMoney: this.props.currentFunds,
-                priority: this.props.priority,
-                purpose: this.props.purpose,
-                isPoppingUpEdit: !prevState.isPoppingUpEdit
-            }
-        })
+      const { location, date, cost, currentFunds, priority, purpose } = this.props;
+      this.setState(prevState => ({ location2: location,
+        targetDate: date,
+        costOfVacation: cost,
+        currentMoney: currentFunds,
+        priority2: priority,
+        purpose2: purpose,
+        isPoppingUpEdit: !prevState.isPoppingUpEdit }));
     }
 
-    handleInputChange = event => {
-        const {name, value} = event.target;
-        this.setState({
-            [name]: value
-        })
+    handleInputChange = (event) => {
+      const { name, value } = event.target;
+      this.setState({ [name]: value });
     }
 
-    render(){
-        const date = this.props.date;
-        const newDate = date.replace("T00:00:00.000Z", "");
-        
-        return(
-            <div>
-                <VacationsInfo 
-                date={newDate}
-                location={this.props.location}
-                priority={this.props.priority}
-                cost={this.props.cost.toLocaleString("en-us")}
-                currentFunds={this.props.currentFunds.toLocaleString("en-us")}
-                purpose={this.props.purpose}
-                popupDeleteToggle={this.popUpDelete}
-                popupEditToggle={this.popUpEdit}
-                number={this.props.number}
-                />
+    render() {
+      const { date, location, priority, cost, currentFunds, purpose, number } = this.props;
+      const { isPoppingUpDelete, isPoppingUpEdit, location2, targetDate, costOfVacation, currentMoney, priority2, purpose2 } = this.state;
+      const newDate = date.replace('T00:00:00.000Z', '');
 
-                <VacationsDelete 
-                isDeleting={this.state.isPoppingUpDelete}
-                deleteVaca={this.deleteVacation}
-                popupDeleteToggle={this.popUpDelete}
-                />
+      return (
+        <div>
+          <VacationsInfo
+            date={newDate}
+            location={location}
+            priority={priority}
+            cost={cost.toLocaleString('en-us')}
+            currentFunds={currentFunds.toLocaleString('en-us')}
+            purpose={purpose}
+            popupDeleteToggle={this.popUpDelete}
+            popupEditToggle={this.popUpEdit}
+            number={number}
+          />
 
-                <VacationsEdit 
-                isEditing={this.state.isPoppingUpEdit}
-                popupEditToggle={this.popUpEdit}
-                saveEdit={this.editAVacation}
-                location={this.state.location}
-                inputChange={this.handleInputChange}
-                date={this.state.targetDate}
-                cost={this.state.costOfVacation}
-                currentMoney={this.state.currentMoney}
-                priority={this.state.priority}
-                purpose={this.state.purpose}
-                />
-            </div>
-        )
+          <VacationsDelete
+            isDeleting={isPoppingUpDelete}
+            deleteVaca={this.deleteVacation}
+            popupDeleteToggle={this.popUpDelete}
+          />
+
+          <VacationsEdit
+            isEditing={isPoppingUpEdit}
+            popupEditToggle={this.popUpEdit}
+            saveEdit={this.editAVacation}
+            location={location2}
+            inputChange={this.handleInputChange}
+            date={targetDate}
+            cost={costOfVacation}
+            currentMoney={currentMoney}
+            priority={priority2}
+            purpose={purpose2}
+          />
+        </div>
+      );
     }
 }
 
-export default connect(state => ({vacations: state}), {removeVacation, editVacation})(ViewVacations);
+export default connect(state => ({ vacations: state }), { removeVacationConnect: removeVacation, editVacationConnect: editVacation })(ViewVacations);

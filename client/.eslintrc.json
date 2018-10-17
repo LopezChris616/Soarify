@@ -9,7 +9,14 @@
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/prop-types": [0],
         "object-curly-newline": ["error", "never"],
-        "linebreak-style": 0
+        "linebreak-style": 0,
+        "max-len": ["error", { "code": 238 }],
+        "no-underscore-dangle": 0,
+        "react/jsx-one-expression-per-line": 0,
+        "no-console": 0
       },
-      "parser": "babel-eslint"
+      "parser": "babel-eslint",
+      "env": {
+        "browser": true
+      }
 }

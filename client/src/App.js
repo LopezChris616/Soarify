@@ -14,8 +14,8 @@ import './index.css';
 
 class App extends Component {
     componentDidMount = () => {
-     const {verify} = this.props;
-      verify();
+      const { verifyConnect } = this.props;
+      verifyConnect();
     }
 
     render() {
@@ -49,4 +49,4 @@ class App extends Component {
     }
 }
 
-export default withRouter(connect(state => state, { verify })(App));
+export default withRouter(connect(state => state, { verifyConnect: verify })(App));
