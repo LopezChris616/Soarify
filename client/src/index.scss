@@ -5,6 +5,7 @@ $background-repeat: no-repeat;
 $font-color: white;
 $center-align: center;
 $bottom-align: bottom;
+$page-height: 100%;
 
 @mixin background-image($url, $image-position) {
     background: {
@@ -51,6 +52,14 @@ $bottom-align: bottom;
 * {
     margin: 0;
     font-family: Poppins;
+}
+
+body, html {
+    height: $page-height;
+}
+
+#root {
+    height: $page-height;
 }
 
 #app-container {
@@ -103,9 +112,8 @@ $bottom-align: bottom;
 
 //sign up
 #sign-up {
+    height: $page-height;
     @include background-image("https://images.unsplash.com/photo-1531976731176-a9c0224aa9c6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5666a5572d4fc28776385929ab53c044&auto=format&fit=crop&w=1050&q=80", $bottom-align);
-    height: 100%;
-    min-height: 700px;
     color: $font-color;
     padding-top: 150px;
     @media(max-width: 767px){
@@ -124,6 +132,7 @@ $bottom-align: bottom;
 
 //login
 #login {
+    height: $page-height;
     @include background-image("https://images.unsplash.com/photo-1468779823294-9824b5b9a1b2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=77af828f29cefb724b4a5f51ca7e192c&auto=format&fit=crop&w=1055&q=80", $bottom-align);
     @include page-height(700px);
     color: $font-color;
@@ -132,9 +141,10 @@ $bottom-align: bottom;
 
 //create vacation
 #create-vacation-container {
-    @include background-image("https://images.unsplash.com/photo-1505642257289-9f2d7dd73641?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=00a0e335423175c41a7b880e80cd5b48&auto=format&fit=crop&w=1094&q=80", $bottom-align);
-    @include page-height(758px);
+    height: 100vh;
+    // @include page-height(758px);
     color: $font-color;
+    color: black;
 }
 
 #create-vacation-form {

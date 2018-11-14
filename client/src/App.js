@@ -22,7 +22,7 @@ class App extends Component {
       const { user } = this.props;
       const { isAuthenticated, loading } = user;
       return (
-        <div>
+        <div style={{ height: '100%' }}>
           {loading
             ? <h1 style={{ textAlign: 'center', paddingTop: '100px' }}>Loading...</h1>
             : (
@@ -39,7 +39,7 @@ class App extends Component {
                     ? <Redirect to="/createVacation" /> : <Login {...props} />)}
                 />
                 <Route path="/vacations" component={Vacations} />
-                <ProtectedRoute path="/createVacation" component={CreateVacation} />
+                <ProtectedRoute path="/createVacation" component={CreateVacation} style={{ height: '100%' }} />
                 <ProtectedRoute path="/vacationsMap" component={GoogleMaps} />
               </Switch>
             )

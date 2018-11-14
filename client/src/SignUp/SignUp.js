@@ -3,7 +3,7 @@ import Navbar from '../NavAndFoot/Navbar';
 import SignUpForm from './SignUpForm';
 
 const SignUp = () => (
-  <div>
+  <div style={{ height: '100%' }}>
     <Navbar />
     <SignUpForm />
   </div>
